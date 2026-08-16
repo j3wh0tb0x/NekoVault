@@ -3,955 +3,520 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
-    <title>Unknown Waifu - NekoVault</title>
+<title>Unknown Waifu - NekoVault</title>
 
+<style>
 
-    <style>
+@font-face {
+    font-family: "Soul Billani";
+    src: url("../SoulBillani.otf") format("opentype");
+}
 
+@font-face {
+    font-family: "Prili Display";
+    src: url("../PriliDisplay.otf") format("opentype");
+}
 
-        /* =========================
-           FONTS
-           ========================= */
+* {
+    box-sizing: border-box;
+}
 
-        @font-face {
+html {
+    min-height: 100%;
+}
 
-            font-family: "Soul Billani";
+body {
 
-            src: url("../SoulBillani.otf")
-                format("opentype");
+    margin: 0;
 
-            font-weight: normal;
+    min-height: 100vh;
 
-            font-style: normal;
+    background-image:
+        url("../images/background/background.jpg");
 
-        }
+    background-size: cover;
 
+    background-position: center;
 
-        @font-face {
+    background-attachment: fixed;
 
-            font-family: "Prili Display";
+    background-repeat: no-repeat;
 
-            src: url("../PriliDisplay.otf")
-                format("opentype");
+    background-color: #1e5da5;
 
-            font-weight: normal;
+    font-family: Arial, sans-serif;
+}
 
-            font-style: normal;
+.page {
 
-        }
+    width: 100%;
 
+    min-height: 100vh;
 
-        /* =========================
-           PAGE
-           ========================= */
+    display: flex;
 
-        * {
+    flex-direction: column;
 
-            box-sizing: border-box;
+    align-items: center;
 
-        }
+    padding: 30px 20px 50px;
+}
 
 
-        html {
+/* =========================
+   NAVIGATION
+   ========================= */
 
-            min-height: 100%;
+.top-panel {
 
-        }
+    width: min(1000px, 100%);
 
+    background: #000000;
 
-        body {
+    display: flex;
 
-            margin: 0;
+    justify-content: center;
 
-            min-height: 100vh;
+    align-items: center;
 
-            background-image:
-                url("../images/background/background.jpg");
+    gap: 10px;
 
-            background-size: cover;
+    padding: 15px 20px;
 
-            background-position: center;
+    border-radius: 25px;
 
-            background-attachment: fixed;
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.5);
+}
 
-            background-repeat: no-repeat;
+.top-button {
 
-            background-color: #1e5da5;
+    font-family:
+        "Prili Display",
+        serif;
 
-            font-family: Arial, sans-serif;
+    color: #FAEB92;
 
-        }
+    text-decoration: none;
 
+    font-size: 35px;
 
-        /* =========================
-           MAIN PAGE
-           ========================= */
+    padding: 8px 18px;
 
-        .page {
+    border-radius: 15px;
 
-            width: 100%;
+    text-shadow:
+        0 0 5px #F582A7,
+        0 0 10px #F582A7;
 
-            min-height: 100vh;
+    transition:
+        transform 0.2s ease,
+        color 0.2s ease;
+}
 
-            display: flex;
+.top-button:hover {
 
-            flex-direction: column;
+    color: #F582A7;
 
-            align-items: center;
+    transform:
+        translateY(-3px);
 
-            padding:
-                30px 20px 50px;
+    text-shadow:
+        0 0 5px #FAEB92,
+        0 0 12px #FAEB92;
+}
 
-        }
 
+/* =========================
+   CHARACTER
+   ========================= */
 
-        /* =========================
-           TOP NAVIGATION
-           ========================= */
+.character-area {
 
-        .top-panel {
+    width: min(1100px, 100%);
 
-            width: min(1000px, 100%);
+    margin-top: 50px;
+}
 
-            background: #000000;
+.character-panel {
 
-            display: flex;
+    width: 100%;
 
-            justify-content: center;
+    background: #000000;
 
-            align-items: center;
+    border-radius: 25px;
 
-            gap: 10px;
+    padding: 30px;
 
-            padding:
-                15px 20px;
+    display: flex;
 
-            border-radius: 25px;
+    gap: 40px;
 
-            box-shadow:
-                0 5px 20px
-                rgba(0, 0, 0, 0.5);
+    box-shadow:
+        0 5px 25px rgba(0,0,0,0.7);
+}
 
-        }
+.character-image {
 
+    width: 45%;
 
-        /* =========================
-           NAVIGATION BUTTONS
-           ========================= */
+    max-height: 700px;
 
-        .top-button {
+    object-fit: contain;
 
-            font-family:
-                "Prili Display",
-                serif;
+    display: block;
 
-            color: #FAEB92;
+    border-radius: 18px;
+}
 
-            text-decoration: none;
+.character-info {
 
-            font-size: 35px;
+    flex: 1;
 
-            padding:
-                8px 18px;
+    padding: 20px 10px;
+}
 
-            border-radius: 15px;
+.character-name {
 
-            text-shadow:
-                0 0 5px #F582A7,
-                0 0 10px #F582A7;
+    margin: 0;
 
-            transition:
-                transform 0.2s ease,
-                color 0.2s ease;
+    font-family:
+        "Soul Billani",
+        cursive;
 
-        }
+    font-size: 65px;
 
+    line-height: 1.05;
 
-        .top-button:hover {
+    color: #FAEB92;
 
-            color: #F582A7;
+    text-shadow:
+        0 0 8px #F582A7,
+        0 0 16px #F582A7,
+        3px 3px 0 #F582A7;
+}
 
-            transform:
-                translateY(-3px);
+.character-series {
 
-            text-shadow:
-                0 0 5px #FAEB92,
-                0 0 12px #FAEB92;
+    margin-top: 15px;
 
-        }
+    margin-bottom: 45px;
 
+    font-family:
+        "Prili Display",
+        serif;
 
-        /* =========================
-           CHARACTER AREA
-           ========================= */
+    font-size: 40px;
 
-        .character-area {
+    color: #FAEB92;
+}
 
-            width: min(1100px, 100%);
+.series-link {
 
-            margin-top: 50px;
+    color: #FAEB92;
 
-        }
+    text-decoration: none;
 
+    text-shadow:
+        0 0 5px #F582A7,
+        0 0 10px #F582A7;
 
-        /* =========================
-           CHARACTER PANEL
-           ========================= */
+    transition:
+        color 0.2s ease,
+        text-shadow 0.2s ease;
+}
 
-        .character-panel {
+.series-link:hover {
 
-            width: 100%;
+    color: #F582A7;
 
-            background: #000000;
+    text-shadow:
+        0 0 8px #FAEB92,
+        0 0 16px #FAEB92;
+}
 
-            border-radius: 25px;
+.character-detail {
 
-            padding: 30px;
+    margin: 22px 0;
 
-            display: flex;
+    font-family:
+        "Prili Display",
+        serif;
 
-            gap: 40px;
+    font-size: 37px;
 
-            box-shadow:
-                0 5px 25px
-                rgba(0, 0, 0, 0.7);
+    color: #FAEB92;
 
-        }
+    text-shadow:
+        0 0 5px #F582A7,
+        0 0 10px #F582A7;
+}
 
+.age {
+    color: #FF0000;
+}
 
-        /* =========================
-           CHARACTER IMAGE
-           ========================= */
+.back-button {
 
-        .character-image {
+    display: inline-block;
 
-            width: 45%;
+    margin-top: 35px;
 
-            max-height: 700px;
+    padding: 8px 18px;
 
-            object-fit: contain;
+    background: #FAEB92;
 
-            display: block;
+    color: #7b5e94;
 
-            border-radius: 18px;
+    border-radius: 10px;
 
-        }
+    font-family:
+        "Prili Display",
+        serif;
 
+    font-size: 20px;
 
-        /* =========================
-           CHARACTER INFORMATION
-           ========================= */
+    text-decoration: none;
 
-        .character-info {
+    box-shadow:
+        0 0 6px #F582A7;
 
-            flex: 1;
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
 
-            padding:
-                20px 10px;
+.back-button:hover {
 
-        }
+    background: #F582A7;
 
+    transform:
+        translateY(-2px);
+}
 
-        /* =========================
-           CHARACTER NAME
-           ========================= */
 
-        .character-name {
+/* =========================
+   MOBILE
+   ========================= */
 
-            margin: 0;
+@media (max-width: 700px) {
 
-            font-family:
-                "Soul Billani",
-                cursive;
+    .page {
+        padding: 15px 10px 35px;
+    }
 
-            font-size: 65px;
+    .top-panel {
 
-            line-height: 1.05;
+        width: 100%;
 
-            color: #FAEB92;
+        flex-wrap: wrap;
 
-            text-shadow:
-                0 0 8px #F582A7,
-                0 0 16px #F582A7,
-                3px 3px 0 #F582A7;
+        gap: 3px;
 
-        }
+        padding: 8px 6px;
 
+        border-radius: 18px;
+    }
 
-        /* =========================
-           SERIES BUTTON
-           ========================= */
+    .top-button {
 
-        .character-series {
+        font-size: 21px;
 
-            display: inline-block;
+        padding: 6px 9px;
+    }
 
-            margin-top: 15px;
+    .character-area {
 
-            margin-bottom: 45px;
+        width: 100%;
 
-            font-family:
-                "Prili Display",
-                serif;
+        margin-top: 25px;
+    }
 
-            font-size: 40px;
+    .character-panel {
 
-            color: #FAEB92;
+        flex-direction: column;
 
-            text-decoration: none;
+        padding: 15px;
 
-            text-shadow:
-                0 0 5px #F582A7,
-                0 0 10px #F582A7;
+        gap: 18px;
 
-            transition:
-                color 0.2s ease,
-                transform 0.2s ease;
+        border-radius: 18px;
+    }
 
-        }
+    .character-image {
 
+        width: 100%;
 
-        .character-series:hover {
+        max-height: 500px;
+    }
 
-            color: #F582A7;
+    .character-info {
 
-            transform:
-                translateY(-2px);
+        width: 100%;
 
-        }
+        padding: 5px 3px 10px;
+    }
 
+    .character-name {
 
-        /* =========================
-           CHARACTER DETAILS
-           ========================= */
+        font-size: 42px;
+    }
 
-        .character-detail {
+    .character-series {
 
-            margin:
-                22px 0;
+        margin-top: 10px;
 
-            font-family:
-                "Prili Display",
-                serif;
+        margin-bottom: 25px;
 
-            font-size: 37px;
+        font-size: 25px;
+    }
 
-            color: #FAEB92;
+    .character-detail {
 
-            text-shadow:
-                0 0 5px #F582A7,
-                0 0 10px #F582A7;
+        font-size: 24px;
 
-        }
+        margin: 15px 0;
 
+        line-height: 1.2;
+    }
 
-        /* =========================
-           AGE
-           ========================= */
+    .back-button {
 
-        .age {
+        margin-top: 25px;
 
-            color: #FF0000;
+        font-size: 17px;
+    }
+}
 
-        }
 
+@media (max-width: 400px) {
 
-        /* =========================
-           BACK BUTTON
-           ========================= */
+    .top-button {
+        font-size: 18px;
+    }
 
-        .back-button {
+    .character-panel {
+        padding: 12px;
+    }
 
-            display: inline-block;
+    .character-image {
+        max-height: 420px;
+    }
 
-            margin-top: 35px;
+    .character-name {
+        font-size: 35px;
+    }
 
-            padding:
-                8px 18px;
+    .character-series {
+        font-size: 21px;
+    }
 
-            background: #FAEB92;
+    .character-detail {
+        font-size: 20px;
+    }
 
-            color: #7b5e94;
+    .back-button {
+        font-size: 15px;
+    }
+}
 
-            border-radius: 10px;
-
-            font-family:
-                "Prili Display",
-                serif;
-
-            font-size: 20px;
-
-            text-decoration: none;
-
-            box-shadow:
-                0 0 6px #F582A7;
-
-            transition:
-                transform 0.2s ease,
-                background 0.2s ease;
-
-        }
-
-
-        .back-button:hover {
-
-            background: #F582A7;
-
-            transform:
-                translateY(-2px);
-
-        }
-
-
-        /* =========================
-           TABLET
-           ========================= */
-
-        @media (max-width: 900px) {
-
-            .character-panel {
-
-                gap: 25px;
-
-                padding: 25px;
-
-            }
-
-
-            .character-name {
-
-                font-size: 52px;
-
-            }
-
-
-            .character-series {
-
-                font-size: 32px;
-
-                margin-bottom: 35px;
-
-            }
-
-
-            .character-detail {
-
-                font-size: 30px;
-
-                margin:
-                    18px 0;
-
-            }
-
-        }
-
-
-        /* =========================
-           MOBILE
-           ========================= */
-
-        @media (max-width: 700px) {
-
-            .page {
-
-                padding:
-                    15px 10px 35px;
-
-            }
-
-
-            /* =====================
-               NAVIGATION
-               ===================== */
-
-            .top-panel {
-
-                width: 100%;
-
-                flex-wrap: wrap;
-
-                gap: 3px;
-
-                padding:
-                    8px 6px;
-
-                border-radius: 18px;
-
-            }
-
-
-            .top-button {
-
-                font-size: 21px;
-
-                padding:
-                    6px 9px;
-
-                border-radius: 10px;
-
-            }
-
-
-            /* =====================
-               CHARACTER AREA
-               ===================== */
-
-            .character-area {
-
-                width: 100%;
-
-                margin-top: 25px;
-
-            }
-
-
-            /* =====================
-               CHARACTER PANEL
-               ===================== */
-
-            .character-panel {
-
-                flex-direction: column;
-
-                width: 100%;
-
-                padding: 15px;
-
-                gap: 18px;
-
-                border-radius: 18px;
-
-            }
-
-
-            /* =====================
-               CHARACTER IMAGE
-               ===================== */
-
-            .character-image {
-
-                width: 100%;
-
-                max-height: 500px;
-
-                object-fit: contain;
-
-                border-radius: 12px;
-
-            }
-
-
-            /* =====================
-               INFORMATION
-               ===================== */
-
-            .character-info {
-
-                width: 100%;
-
-                padding:
-                    5px 3px 10px;
-
-            }
-
-
-            /* =====================
-               NAME
-               ===================== */
-
-            .character-name {
-
-                font-size: 42px;
-
-                line-height: 1.05;
-
-            }
-
-
-            /* =====================
-               SERIES
-               ===================== */
-
-            .character-series {
-
-                margin-top: 10px;
-
-                margin-bottom: 25px;
-
-                font-size: 25px;
-
-                line-height: 1.15;
-
-            }
-
-
-            /* =====================
-               DETAILS
-               ===================== */
-
-            .character-detail {
-
-                font-size: 24px;
-
-                margin:
-                    15px 0;
-
-                line-height: 1.2;
-
-            }
-
-
-            /* =====================
-               BACK BUTTON
-               ===================== */
-
-            .back-button {
-
-                margin-top: 25px;
-
-                padding:
-                    7px 14px;
-
-                font-size: 17px;
-
-                border-radius: 8px;
-
-            }
-
-        }
-
-
-        /* =========================
-           SMALL PHONES
-           ========================= */
-
-        @media (max-width: 400px) {
-
-            .page {
-
-                padding:
-                    12px 8px 30px;
-
-            }
-
-
-            /* NAVIGATION */
-
-            .top-panel {
-
-                padding:
-                    7px 5px;
-
-                gap: 2px;
-
-            }
-
-
-            .top-button {
-
-                font-size: 18px;
-
-                padding:
-                    5px 7px;
-
-            }
-
-
-            /* PANEL */
-
-            .character-panel {
-
-                padding: 12px;
-
-                gap: 15px;
-
-                border-radius: 16px;
-
-            }
-
-
-            /* IMAGE */
-
-            .character-image {
-
-                max-height: 420px;
-
-                border-radius: 10px;
-
-            }
-
-
-            /* NAME */
-
-            .character-name {
-
-                font-size: 35px;
-
-            }
-
-
-            /* SERIES */
-
-            .character-series {
-
-                font-size: 21px;
-
-                margin-bottom: 22px;
-
-            }
-
-
-            /* DETAILS */
-
-            .character-detail {
-
-                font-size: 20px;
-
-                margin:
-                    13px 0;
-
-            }
-
-
-            /* BUTTON */
-
-            .back-button {
-
-                margin-top: 20px;
-
-                font-size: 15px;
-
-                padding:
-                    6px 12px;
-
-            }
-
-        }
-
-
-        /* =========================
-           VERY SMALL PHONES
-           ========================= */
-
-        @media (max-width: 320px) {
-
-            .top-button {
-
-                font-size: 16px;
-
-                padding:
-                    4px 6px;
-
-            }
-
-
-            .character-panel {
-
-                padding: 10px;
-
-            }
-
-
-            .character-image {
-
-                max-height: 350px;
-
-            }
-
-
-            .character-name {
-
-                font-size: 30px;
-
-            }
-
-
-            .character-series {
-
-                font-size: 18px;
-
-            }
-
-
-            .character-detail {
-
-                font-size: 18px;
-
-            }
-
-
-            .back-button {
-
-                font-size: 14px;
-
-            }
-
-        }
-
-
-    </style>
+</style>
 
 </head>
 
-
 <body>
 
+<div class="page">
 
-    <div class="page">
+<nav class="top-panel">
 
+<a href="/" class="top-button">
+Home
+</a>
 
-        <!-- =========================
-             TOP NAVIGATION
-             ========================= -->
+<a href="/gallery" class="top-button">
+Gallery
+</a>
 
-        <nav class="top-panel">
+<a href="/characters" class="top-button">
+Characters
+</a>
 
+<a href="/series-index.html" class="top-button">
+Series
+</a>
 
-            <a
-                href="/"
-                class="top-button"
-            >
-                Home
-            </a>
+<a href="/profile" class="top-button">
+Profile
+</a>
 
-
-            <a
-                href="/gallery"
-                class="top-button"
-            >
-                Gallery
-            </a>
-
-
-            <a
-                href="/characters"
-                class="top-button"
-            >
-                Characters
-            </a>
+</nav>
 
 
-            <a
-                href="/series-index.html"
-                class="top-button"
-            >
-                Series
-            </a>
+<main class="character-area">
 
+<section class="character-panel">
 
-            <a
-                href="/profile"
-                class="top-button"
-            >
-                Profile
-            </a>
+<img
+    src="unknown waifu.jpg"
+    alt="Unknown Waifu"
+    class="character-image"
+>
 
+<div class="character-info">
 
-        </nav>
+<h1 class="character-name">
+Unknown Waifu
+</h1>
 
+<div class="character-series">
 
-        <!-- =========================
-             CHARACTER
-             ========================= -->
+<a
+    href="../series/original-or-unclassified.html"
+    class="series-link"
+>
+Original / Unclassified
+</a>
 
-        <main class="character-area">
+</div>
 
+<div class="character-detail">
 
-            <section class="character-panel">
+Age:
+<span class="age">
+18+
+</span>
 
+</div>
 
-                <!-- =====================
-                     CHARACTER IMAGE
-                     ===================== -->
+<div class="character-detail">
 
-                <img
-                    src="unknown%20waifu.jpg"
-                    alt="Unknown Waifu"
-                    class="character-image"
-                >
+Race:
+Any
 
+</div>
 
-                <!-- =====================
-                     CHARACTER INFORMATION
-                     ===================== -->
+<a
+    href="../characters.html"
+    class="back-button"
+>
+𐂯 Back to Characters
+</a>
 
-                <div class="character-info">
+</div>
 
+</section>
 
-                    <!-- NAME -->
+</main>
 
-                    <h1 class="character-name">
-
-                        Unknown Waifu
-
-                    </h1>
-
-
-                    <!-- SERIES BUTTON -->
-
-                    <a
-                        href="../series-index.html"
-                        class="character-series"
-                    >
-
-                        Original or Unclassified
-
-                    </a>
-
-
-                    <!-- AGE -->
-
-                    <div class="character-detail">
-
-                        Age:
-
-                        <span class="age">
-                            18+
-                        </span>
-
-                    </div>
-
-
-                    <!-- RACE -->
-
-                    <div class="character-detail">
-
-                        Race:
-                        Any
-
-                    </div>
-
-
-                    <!-- BACK TO CHARACTERS -->
-
-                    <a
-                        href="../characters.html"
-                        class="back-button"
-                    >
-
-                        𐂯 Back to Characters
-
-                    </a>
-
-
-                </div>
-
-
-            </section>
-
-
-        </main>
-
-
-    </div>
-
+</div>
 
 </body>
 
