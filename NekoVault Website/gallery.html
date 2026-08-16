@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>NekoVault Gallery</title>
+
+
+    <style>
+
+
+        /* =========================
+           FONTS
+           ========================= */
+
+        @font-face {
+
+            font-family: "Soul Billani";
+
+            src: url("SoulBillani.otf")
+                format("opentype");
+
+            font-weight: normal;
+
+            font-style: normal;
+
+        }
+
+
+        @font-face {
+
+            font-family: "Prili Display";
+
+            src: url("PriliDisplay.otf")
+                format("opentype");
+
+            font-weight: normal;
+
+            font-style: normal;
+
+        }
+
+
+        /* =========================
+           PAGE
+           ========================= */
+
+        * {
+
+            box-sizing: border-box;
+
+        }
+
+
+        html {
+
+            min-height: 100%;
+
+        }
+
+
+        body {
+
+            margin: 0;
+
+            min-height: 100vh;
+
+            background-image:
+                url("https://media.discordapp.net/attachments/1534687942927188142/1537979191574663218/download_1.jpg?ex=6a81023d&is=6a7fb0bd&hm=1673f225a38956cf717fa48e5b403c6d5ee121bf046d6908209402e086beb847&=&format=webp&width=1024&height=576");
+
+            background-size: cover;
+
+            background-position: center;
+
+            background-attachment: fixed;
+
+            background-repeat: no-repeat;
+
+            font-family: Arial, sans-serif;
+
+        }
+
+
+        /* =========================
+           MAIN PAGE
+           ========================= */
+
+        .page {
+
+            width: 100%;
+
+            min-height: 100vh;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            padding:
+                30px 20px 50px;
+
+        }
+
+
+        /* =========================
+           TOP PANEL
+           ========================= */
+
+        .top-panel {
+
+            width: min(1000px, 100%);
+
+            background: #000000;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 10px;
+
+            padding:
+                15px 20px;
+
+            border-radius: 25px;
+
+            box-shadow:
+                0 5px 20px
+                rgba(0, 0, 0, 0.5);
+
+        }
+
+
+        /* =========================
+           TOP PANEL BUTTONS
+           ========================= */
+
+        .top-button {
+
+            font-family:
+                "Prili Display",
+                serif;
+
+            color: #FAEB92;
+
+            text-decoration: none;
+
+            font-size: 35px;
+
+            padding:
+                8px 18px;
+
+            border-radius: 15px;
+
+            text-shadow:
+                0 0 5px #F582A7,
+                0 0 10px #F582A7;
+
+            transition:
+                transform 0.2s ease,
+                color 0.2s ease;
+
+        }
+
+
+        .top-button:hover {
+
+            color: #F582A7;
+
+            transform:
+                translateY(-3px);
+
+            text-shadow:
+                0 0 5px #FAEB92,
+                0 0 12px #FAEB92;
+
+        }
+
+
+        /* =========================
+           GALLERY AREA
+           ========================= */
+
+        .gallery-area {
+
+            width: min(1000px, 100%);
+
+            min-height: 500px;
+
+            margin-top: 35px;
+
+        }
+
+
+        /* =========================
+           MOBILE
+           ========================= */
+
+        @media (max-width: 700px) {
+
+            .page {
+
+                padding:
+                    20px 12px 40px;
+
+            }
+
+
+            .top-panel {
+
+                width: 100%;
+
+                flex-wrap: wrap;
+
+                gap: 5px;
+
+                padding:
+                    10px 8px;
+
+                border-radius: 20px;
+
+            }
+
+
+            .top-button {
+
+                font-size: 23px;
+
+                padding:
+                    7px 10px;
+
+                border-radius: 12px;
+
+                text-shadow:
+                    0 0 4px #F582A7,
+                    0 0 8px #F582A7;
+
+            }
+
+
+            .gallery-area {
+
+                width: 100%;
+
+                min-height: 400px;
+
+                margin-top: 25px;
+
+            }
+
+        }
+
+
+        /* =========================
+           SMALL PHONES
+           ========================= */
+
+        @media (max-width: 400px) {
+
+            .top-button {
+
+                font-size: 19px;
+
+                padding:
+                    6px 8px;
+
+            }
+
+
+            .gallery-area {
+
+                min-height: 300px;
+
+            }
+
+        }
+
+
+        /* =========================
+           VERY SMALL PHONES
+           ========================= */
+
+        @media (max-width: 320px) {
+
+            .top-panel {
+
+                gap: 2px;
+
+            }
+
+
+            .top-button {
+
+                font-size: 17px;
+
+                padding:
+                    5px 6px;
+
+            }
+
+        }
+
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="page">
+
+
+        <!-- =========================
+             TOP PANEL
+             ========================= -->
+
+        <nav class="top-panel">
+
+
+            <a
+                href="index.html"
+                class="top-button"
+            >
+                Home
+            </a>
+
+
+            <a
+                href="gallery.html"
+                class="top-button"
+            >
+                Gallery
+            </a>
+
+
+            <a
+                href="characters.html"
+                class="top-button"
+            >
+                Characters
+            </a>
+
+
+            <a
+                href="series.html"
+                class="top-button"
+            >
+                Series
+            </a>
+
+
+            <a
+                href="profile.html"
+                class="top-button"
+            >
+                Profile
+            </a>
+
+
+        </nav>
+
+
+        <!-- =========================
+             GALLERY
+             ========================= -->
+
+        <main class="gallery-area">
+
+
+            <!--
+                 GALLERY CONTENT
+                 WILL BE ADDED HERE
+            -->
+
+
+        </main>
+
+
+    </div>
+
+
+</body>
+
+</html>

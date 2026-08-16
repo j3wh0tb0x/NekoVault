@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>NekoVault - Overlord</title>
+
+
+    <style>
+
+        /* =========================
+           FONTS
+           ========================= */
+
+        @font-face {
+
+            font-family: "Soul Billani";
+
+            src: url("/SoulBillani.otf")
+                format("opentype");
+
+            font-weight: normal;
+
+            font-style: normal;
+
+        }
+
+
+        @font-face {
+
+            font-family: "Prili Display";
+
+            src: url("/PriliDisplay.otf")
+                format("opentype");
+
+            font-weight: normal;
+
+            font-style: normal;
+
+        }
+
+
+        /* =========================
+           PAGE
+           ========================= */
+
+        * {
+
+            box-sizing: border-box;
+
+        }
+
+
+        html {
+
+            min-height: 100%;
+
+        }
+
+
+        body {
+
+            margin: 0;
+
+            min-height: 100vh;
+
+            background-image:
+                url("https://media.discordapp.net/attachments/1534687942927188142/1537979191574663218/download_1.jpg?ex=6a81023d&is=6a7fb0bd&hm=1673f225a38956cf717fa48e5b403c6d5ee121bf046d6908209402e086beb847&=&format=webp&width=1024&height=576");
+
+            background-size: cover;
+
+            background-position: center;
+
+            background-attachment: fixed;
+
+            background-repeat: no-repeat;
+
+            background-color: #1e5da5;
+
+            font-family: Arial, sans-serif;
+
+        }
+
+
+        .page {
+
+            width: 100%;
+
+            min-height: 100vh;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            padding:
+                30px 20px 50px;
+
+        }
+
+
+        /* =========================
+           NAVIGATION
+           ========================= */
+
+        .top-panel {
+
+            width: min(1000px, 100%);
+
+            background: #000000;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 10px;
+
+            padding:
+                15px 20px;
+
+            border-radius: 25px;
+
+            box-shadow:
+                0 5px 20px
+                rgba(0, 0, 0, 0.5);
+
+        }
+
+
+        .top-button {
+
+            font-family:
+                "Prili Display",
+                serif;
+
+            color: #FAEB92;
+
+            text-decoration: none;
+
+            font-size: 35px;
+
+            padding:
+                8px 18px;
+
+            border-radius: 15px;
+
+            text-shadow:
+                0 0 5px #F582A7,
+                0 0 10px #F582A7;
+
+            transition:
+                transform 0.2s ease,
+                color 0.2s ease;
+
+        }
+
+
+        .top-button:hover {
+
+            color: #F582A7;
+
+            transform:
+                translateY(-3px);
+
+            text-shadow:
+                0 0 5px #FAEB92,
+                0 0 12px #FAEB92;
+
+        }
+
+
+        /* =========================
+           SERIES CONTENT
+           ========================= */
+
+        .series-content {
+
+            width: min(1000px, 100%);
+
+            margin-top: 50px;
+
+            text-align: center;
+
+        }
+
+
+        .series-title {
+
+            margin: 0 0 25px;
+
+            font-family:
+                "Soul Billani",
+                cursive;
+
+            font-size: 80px;
+
+            line-height: 1;
+
+            color: #FAEB92;
+
+            text-shadow:
+                0 0 8px #F582A7,
+                0 0 16px #F582A7,
+                3px 3px 0 #F582A7;
+
+        }
+
+
+        /* =========================
+           SERIES IMAGE
+           ========================= */
+
+        .series-main-image {
+
+            width: min(500px, 100%);
+
+            max-height: 650px;
+
+            object-fit: contain;
+
+            display: block;
+
+            margin:
+                0 auto 30px;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 5px 25px
+                rgba(0, 0, 0, 0.6);
+
+        }
+
+
+        /* =========================
+           DESCRIPTION
+           ========================= */
+
+        .series-description {
+
+            width: min(800px, 100%);
+
+            margin:
+                0 auto;
+
+            padding:
+                30px;
+
+            background: #7b5e94;
+
+            border-radius: 20px;
+
+            color: #FAEB92;
+
+            font-family:
+                "Prili Display",
+                serif;
+
+            font-size: 30px;
+
+            line-height: 1.4;
+
+            text-align: center;
+
+            text-shadow:
+                0 0 5px #F582A7,
+                0 0 10px #F582A7;
+
+            box-shadow:
+                0 5px 20px
+                rgba(0, 0, 0, 0.5);
+
+        }
+
+
+        /* =========================
+           BACK BUTTON
+           ========================= */
+
+        .back-button {
+
+            display: inline-block;
+
+            margin-top: 25px;
+
+            padding:
+                12px 25px;
+
+            background: #FAEB92;
+
+            color: #7b5e94;
+
+            font-family:
+                "Prili Display",
+                serif;
+
+            font-size: 25px;
+
+            text-decoration: none;
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 0 8px #F582A7,
+                0 0 16px #F582A7;
+
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease;
+
+        }
+
+
+        .back-button:hover {
+
+            background: #F582A7;
+
+            transform:
+                translateY(-3px);
+
+        }
+
+
+        /* =========================
+           MOBILE
+           ========================= */
+
+        @media (max-width: 700px) {
+
+            .page {
+
+                padding:
+                    20px 12px 40px;
+
+            }
+
+
+            .top-panel {
+
+                width: 100%;
+
+                flex-wrap: wrap;
+
+                gap: 5px;
+
+                padding:
+                    10px 8px;
+
+                border-radius: 20px;
+
+            }
+
+
+            .top-button {
+
+                font-size: 23px;
+
+                padding:
+                    7px 10px;
+
+            }
+
+
+            .series-content {
+
+                margin-top: 35px;
+
+            }
+
+
+            .series-title {
+
+                font-size: 50px;
+
+                margin-bottom: 20px;
+
+            }
+
+
+            .series-main-image {
+
+                width: 90%;
+
+                max-height: 500px;
+
+                border-radius: 15px;
+
+            }
+
+
+            .series-description {
+
+                padding:
+                    20px 15px;
+
+                font-size: 21px;
+
+                border-radius: 15px;
+
+            }
+
+
+            .back-button {
+
+                font-size: 20px;
+
+                padding:
+                    10px 20px;
+
+            }
+
+        }
+
+
+        /* =========================
+           SMALL PHONES
+           ========================= */
+
+        @media (max-width: 400px) {
+
+            .top-button {
+
+                font-size: 19px;
+
+                padding:
+                    6px 8px;
+
+            }
+
+
+            .series-title {
+
+                font-size: 40px;
+
+            }
+
+
+            .series-main-image {
+
+                width: 95%;
+
+            }
+
+
+            .series-description {
+
+                font-size: 18px;
+
+                padding:
+                    18px 12px;
+
+            }
+
+
+            .back-button {
+
+                font-size: 18px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="page">
+
+
+    <!-- =========================
+         NAVIGATION
+         ========================= -->
+
+    <nav class="top-panel">
+
+
+        <a
+            href="/"
+            class="top-button"
+        >
+            Home
+        </a>
+
+
+        <a
+            href="/gallery"
+            class="top-button"
+        >
+            Gallery
+        </a>
+
+
+        <a
+            href="/characters.html"
+            class="top-button"
+        >
+            Characters
+        </a>
+
+
+        <a
+            href="/series-index.html"
+            class="top-button"
+        >
+            Series
+        </a>
+
+
+        <a
+            href="/profile"
+            class="top-button"
+        >
+            Profile
+        </a>
+
+
+        <a
+            href="#"
+            class="top-button"
+        >
+            Logout
+        </a>
+
+
+    </nav>
+
+
+    <!-- =========================
+         SERIES CONTENT
+         ========================= -->
+
+    <main class="series-content">
+
+
+        <h1 class="series-title">
+            Overlord
+        </h1>
+
+
+        <!-- =========================
+             OVERLORD IMAGE
+             ========================= -->
+
+        <img
+            src="https://media.discordapp.net/attachments/1534687942927188142/1538176874285371503/overlord_key_visual.png?ex=6a81ba58&is=6a8068d8&hm=c7460fdb316dcddeca58c7b24d92efa0ed7a8e99da36898ce0067d77fff47748&=&format=webp&quality=lossless&width=717&height=1024"
+            alt="Overlord"
+            class="series-main-image"
+        >
+
+
+        <!-- =========================
+             DESCRIPTION
+             ========================= -->
+
+        <div class="series-description">
+
+            Overlord
+
+            <br><br>
+
+            Characters from the world of
+            Overlord will appear here.
+
+            <br><br>
+
+            More characters coming soon!
+
+        </div>
+
+
+        <!-- =========================
+             BACK BUTTON
+             ========================= -->
+
+        <a
+            href="/series-index.html"
+            class="back-button"
+        >
+            𐂯 Back to Series
+        </a>
+
+
+    </main>
+
+
+</div>
+
+
+</body>
+
+</html>

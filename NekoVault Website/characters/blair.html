@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Blair - NekoVault</title>
+
+
+    <style>
+
+
+        /* =========================
+           FONTS
+           ========================= */
+
+        @font-face {
+
+            font-family: "Soul Billani";
+
+            src: url("../SoulBillani.otf")
+                format("opentype");
+
+            font-weight: normal;
+
+            font-style: normal;
+
+        }
+
+
+        @font-face {
+
+            font-family: "Prili Display";
+
+            src: url("../PriliDisplay.otf")
+                format("opentype");
+
+            font-weight: normal;
+
+            font-style: normal;
+
+        }
+
+
+        /* =========================
+           PAGE
+           ========================= */
+
+        * {
+
+            box-sizing: border-box;
+
+        }
+
+
+        html {
+
+            min-height: 100%;
+
+        }
+
+
+        body {
+
+            margin: 0;
+
+            min-height: 100vh;
+
+            background-image:
+                url("https://media.discordapp.net/attachments/1534687942927188142/1537979191574663218/download_1.jpg?ex=6a81023d&is=6a7fb0bd&hm=1673f225a38956cf717fa48e5b403c6d5ee121bf046d6908209402e086beb847&=&format=webp&width=1024&height=576");
+
+            background-size: cover;
+
+            background-position: center;
+
+            background-attachment: fixed;
+
+            background-repeat: no-repeat;
+
+            background-color: #1e5da5;
+
+            font-family: Arial, sans-serif;
+
+        }
+
+
+        /* =========================
+           MAIN PAGE
+           ========================= */
+
+        .page {
+
+            width: 100%;
+
+            min-height: 100vh;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            padding:
+                30px 20px 50px;
+
+        }
+
+
+        /* =========================
+           NAVIGATION
+           ========================= */
+
+        .top-panel {
+
+            width: min(1000px, 100%);
+
+            background: #000000;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 10px;
+
+            padding:
+                15px 20px;
+
+            border-radius: 25px;
+
+            box-shadow:
+                0 5px 20px
+                rgba(0, 0, 0, 0.5);
+
+        }
+
+
+        .top-button {
+
+            font-family:
+                "Prili Display",
+                serif;
+
+            color: #FAEB92;
+
+            text-decoration: none;
+
+            font-size: 35px;
+
+            padding:
+                8px 18px;
+
+            border-radius: 15px;
+
+            text-shadow:
+                0 0 5px #F582A7,
+                0 0 10px #F582A7;
+
+            transition:
+                transform 0.2s ease,
+                color 0.2s ease;
+
+        }
+
+
+        .top-button:hover {
+
+            color: #F582A7;
+
+            transform:
+                translateY(-3px);
+
+        }
+
+
+        /* =========================
+           CHARACTER AREA
+           ========================= */
+
+        .character-area {
+
+            width: min(1100px, 100%);
+
+            margin-top: 50px;
+
+        }
+
+
+        /* =========================
+           CHARACTER PANEL
+           ========================= */
+
+        .character-panel {
+
+            width: 100%;
+
+            background: #000000;
+
+            border-radius: 25px;
+
+            padding: 30px;
+
+            display: flex;
+
+            gap: 40px;
+
+            box-shadow:
+                0 5px 25px
+                rgba(0, 0, 0, 0.7);
+
+        }
+
+
+        /* =========================
+           CHARACTER IMAGE
+           ========================= */
+
+        .character-image {
+
+            width: 45%;
+
+            max-height: 700px;
+
+            object-fit: contain;
+
+            display: block;
+
+            border-radius: 18px;
+
+        }
+
+
+        /* =========================
+           CHARACTER INFORMATION
+           ========================= */
+
+        .character-info {
+
+            flex: 1;
+
+            padding:
+                20px 10px;
+
+        }
+
+
+        /* =========================
+           CHARACTER NAME
+           ========================= */
+
+        .character-name {
+
+            margin: 0;
+
+            font-family:
+                "Soul Billani",
+                cursive;
+
+            font-size: 65px;
+
+            line-height: 1.05;
+
+            color: #FAEB92;
+
+            text-shadow:
+                0 0 8px #F582A7,
+                0 0 16px #F582A7,
+                3px 3px 0 #F582A7;
+
+        }
+
+
+        /* =========================
+           SERIES
+           ========================= */
+
+        .character-series {
+
+            margin-top: 15px;
+
+            margin-bottom: 45px;
+
+            font-family:
+                "Prili Display",
+                serif;
+
+            font-size: 40px;
+
+            color: #FAEB92;
+
+            text-shadow:
+                0 0 5px #F582A7,
+                0 0 10px #F582A7;
+
+        }
+
+
+        /* =========================
+           CHARACTER DETAILS
+           ========================= */
+
+        .character-detail {
+
+            margin:
+                22px 0;
+
+            font-family:
+                "Prili Display",
+                serif;
+
+            font-size: 37px;
+
+            color: #FAEB92;
+
+            text-shadow:
+                0 0 5px #F582A7,
+                0 0 10px #F582A7;
+
+        }
+
+
+        /* =========================
+           AGE
+           ========================= */
+
+        .age {
+
+            color: #FF0000;
+
+            text-shadow: none;
+
+        }
+
+
+        /* =========================
+           BACK BUTTON
+           ========================= */
+
+        .back-button {
+
+            display: inline-block;
+
+            margin-top: 35px;
+
+            padding:
+                8px 18px;
+
+            background: #FAEB92;
+
+            color: #7b5e94;
+
+            border-radius: 10px;
+
+            font-family:
+                "Prili Display",
+                serif;
+
+            font-size: 20px;
+
+            text-decoration: none;
+
+            box-shadow:
+                0 0 6px #F582A7;
+
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease;
+
+        }
+
+
+        .back-button:hover {
+
+            background: #F582A7;
+
+            transform:
+                translateY(-2px);
+
+        }
+
+
+        /* =========================
+           MOBILE
+           ========================= */
+
+        @media (max-width: 700px) {
+
+
+            .page {
+
+                padding:
+                    20px 12px 40px;
+
+            }
+
+
+            /* NAVIGATION */
+
+            .top-panel {
+
+                width: 100%;
+
+                flex-wrap: wrap;
+
+                gap: 5px;
+
+                padding:
+                    10px 8px;
+
+                border-radius: 20px;
+
+            }
+
+
+            .top-button {
+
+                font-size: 23px;
+
+                padding:
+                    7px 10px;
+
+                border-radius: 12px;
+
+            }
+
+
+            /* CHARACTER AREA */
+
+            .character-area {
+
+                width: 100%;
+
+                margin-top: 30px;
+
+            }
+
+
+            /* CHARACTER PANEL */
+
+            .character-panel {
+
+                flex-direction: column;
+
+                padding: 18px;
+
+                gap: 20px;
+
+                border-radius: 20px;
+
+            }
+
+
+            /* IMAGE */
+
+            .character-image {
+
+                width: 100%;
+
+                max-height: 600px;
+
+                border-radius: 14px;
+
+            }
+
+
+            /* INFORMATION */
+
+            .character-info {
+
+                padding:
+                    10px 5px;
+
+            }
+
+
+            /* NAME */
+
+            .character-name {
+
+                font-size: 48px;
+
+            }
+
+
+            /* SERIES */
+
+            .character-series {
+
+                font-size: 25px;
+
+                margin-bottom: 30px;
+
+            }
+
+
+            /* DETAILS */
+
+            .character-detail {
+
+                font-size: 24px;
+
+                margin:
+                    18px 0;
+
+            }
+
+
+            /* BACK BUTTON */
+
+            .back-button {
+
+                font-size: 18px;
+
+            }
+
+        }
+
+
+        /* =========================
+           SMALL PHONES
+           ========================= */
+
+        @media (max-width: 400px) {
+
+
+            .top-button {
+
+                font-size: 19px;
+
+                padding:
+                    6px 8px;
+
+            }
+
+
+            .character-panel {
+
+                padding: 12px;
+
+            }
+
+
+            .character-name {
+
+                font-size: 40px;
+
+            }
+
+
+            .character-series {
+
+                font-size: 22px;
+
+            }
+
+
+            .character-detail {
+
+                font-size: 21px;
+
+            }
+
+
+        }
+
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="page">
+
+
+    <!-- =========================
+         NAVIGATION
+         ========================= -->
+
+    <nav class="top-panel">
+
+
+        <a
+            href="/"
+            class="top-button"
+        >
+            Home
+        </a>
+
+
+        <a
+            href="/gallery"
+            class="top-button"
+        >
+            Gallery
+        </a>
+
+
+        <a
+            href="/characters"
+            class="top-button"
+        >
+            Characters
+        </a>
+
+
+        <a
+            href="/profile"
+            class="top-button"
+        >
+            Profile
+        </a>
+
+
+        <a
+            href="#"
+            class="top-button"
+        >
+            Logout
+        </a>
+
+
+    </nav>
+
+
+    <!-- =========================
+         CHARACTER
+         ========================= -->
+
+    <main class="character-area">
+
+
+        <section class="character-panel">
+
+
+            <!-- =====================
+                 CHARACTER IMAGE
+                 ===================== -->
+
+            <img
+                src="https://media.discordapp.net/attachments/1534687942927188142/1538170331750080582/27kdvcjkex6e1.png?ex=6a81b440&is=6a8062c0&hm=32b2130db4e6b4486f2412c43a0170884ef00fc94572e7aa0c2387e5f8999bd2&=&format=webp&quality=lossless&width=160&height=256"
+                alt="Blair"
+                class="character-image"
+            >
+
+
+            <!-- =====================
+                 CHARACTER INFORMATION
+                 ===================== -->
+
+            <div class="character-info">
+
+
+                <!-- NAME -->
+
+                <h1 class="character-name">
+
+                    Blair
+
+                </h1>
+
+
+                <!-- SERIES -->
+
+                <div class="character-series">
+
+                    Soul Eater
+
+                </div>
+
+
+                <!-- AGE -->
+
+                <div class="character-detail">
+
+                    Age:
+
+                    <span class="age">
+                        18+
+                    </span>
+
+                </div>
+
+
+                <!-- RACE -->
+
+                <div class="character-detail">
+
+                    Race:
+                    Cat Witch
+
+                </div>
+
+
+                <!-- BACK -->
+
+                <a
+                    href="../series/soul-eater.html"
+                    class="back-button"
+                >
+
+                    𐂯 Back to Soul Eater
+
+                </a>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+</div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,1656 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Original or Unclassified - NekoVault</title>
+
+
+    <style>
+
+
+        /* =========================
+           FONTS
+           ========================= */
+
+        @font-face {
+
+            font-family: "Soul Billani";
+
+            src: url("../SoulBillani.otf")
+                format("opentype");
+
+            font-weight: normal;
+
+            font-style: normal;
+
+        }
+
+
+        @font-face {
+
+            font-family: "Prili Display";
+
+            src: url("../PriliDisplay.otf")
+                format("opentype");
+
+            font-weight: normal;
+
+            font-style: normal;
+
+        }
+
+
+        /* =========================
+           PAGE
+           ========================= */
+
+        * {
+
+            box-sizing: border-box;
+
+        }
+
+
+        html {
+
+            min-height: 100%;
+
+        }
+
+
+        body {
+
+            margin: 0;
+
+            min-height: 100vh;
+
+            background-image:
+                url("https://media.discordapp.net/attachments/1534687942927188142/1537979191574663218/download_1.jpg?ex=6a81023d&is=6a7fb0bd&hm=1673f225a38956cf717fa48e5b403c6d5ee121bf046d6908209402e086beb847&=&format=webp&width=1024&height=576");
+
+            background-size: cover;
+
+            background-position: center;
+
+            background-attachment: fixed;
+
+            background-repeat: no-repeat;
+
+            font-family: Arial, sans-serif;
+
+        }
+
+
+        /* =========================
+           MAIN PAGE
+           ========================= */
+
+        .page {
+
+            width: 100%;
+
+            min-height: 100vh;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            padding: 30px 20px 50px;
+
+        }
+
+
+        /* =========================
+           TOP NAVIGATION
+           ========================= */
+
+        .top-panel {
+
+            width: min(1000px, 100%);
+
+            background: #000000;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 10px;
+
+            padding: 15px 20px;
+
+            border-radius: 25px;
+
+            box-shadow:
+                0 5px 20px
+                rgba(0, 0, 0, 0.5);
+
+        }
+
+
+        .top-button {
+
+            font-family:
+                "Prili Display",
+                serif;
+
+            color: #FAEB92;
+
+            text-decoration: none;
+
+            font-size: 35px;
+
+            padding: 8px 18px;
+
+            border-radius: 15px;
+
+            text-shadow:
+                0 0 5px #F582A7,
+                0 0 10px #F582A7;
+
+            transition:
+                transform 0.2s ease,
+                color 0.2s ease;
+
+        }
+
+
+        .top-button:hover {
+
+            color: #F582A7;
+
+            transform:
+                translateY(-3px);
+
+            text-shadow:
+                0 0 5px #FAEB92,
+                0 0 12px #FAEB92;
+
+        }
+
+
+        /* =========================
+           SERIES AREA
+           ========================= */
+
+        .series-area {
+
+            width: min(1100px, 100%);
+
+            margin-top: 50px;
+
+        }
+
+
+        /* =========================
+           BLACK SERIES PANEL
+           ========================= */
+
+        .series-panel {
+
+            width: 100%;
+
+            background: #000000;
+
+            border-radius: 25px;
+
+            padding: 30px;
+
+            display: flex;
+
+            gap: 40px;
+
+            box-shadow:
+                0 5px 25px
+                rgba(0, 0, 0, 0.7);
+
+        }
+
+
+        /* =========================
+           SERIES IMAGE
+           ========================= */
+
+        .series-image {
+
+            width: 42%;
+
+            max-height: 600px;
+
+            object-fit: contain;
+
+            display: block;
+
+            border-radius: 18px;
+
+        }
+
+
+        /* =========================
+           SERIES INFORMATION
+           ========================= */
+
+        .series-info {
+
+            flex: 1;
+
+            padding:
+                10px 5px;
+
+        }
+
+
+        /* =========================
+           SERIES NAME
+           ========================= */
+
+        .series-name {
+
+            margin: 0;
+
+            font-family:
+                "Soul Billani",
+                cursive;
+
+            font-size: 60px;
+
+            line-height: 1.05;
+
+            color: #FAEB92;
+
+            text-shadow:
+                0 0 8px #F582A7,
+                0 0 16px #F582A7,
+                3px 3px 0 #F582A7;
+
+        }
+
+
+        /* =========================
+           DESCRIPTION
+           ========================= */
+
+        .series-description {
+
+            margin-top: 25px;
+
+            font-family:
+                "Prili Display",
+                serif;
+
+            font-size: 28px;
+
+            line-height: 1.35;
+
+            color: #FAEB92;
+
+            text-shadow:
+                0 0 5px #F582A7,
+                0 0 10px #F582A7;
+
+        }
+
+
+        /* =========================
+           CATEGORY
+           ========================= */
+
+        .series-category {
+
+            margin-top: 45px;
+
+            font-family:
+                "Prili Display",
+                serif;
+
+            font-size: 28px;
+
+            color: #FAEB92;
+
+            text-shadow:
+                0 0 5px #F582A7,
+                0 0 10px #F582A7;
+
+        }
+
+
+        .category-name {
+
+            color: #FAEB92;
+
+        }
+
+
+        /* =========================
+           SEARCH
+           ========================= */
+
+        .series-search-container {
+
+            position: relative;
+
+            width: 100%;
+
+            margin-top: 35px;
+
+        }
+
+
+        .series-search {
+
+            width: 100%;
+
+            height: 36px;
+
+            padding:
+                6px 14px;
+
+            background: #7b5e94;
+
+            border:
+                2px solid #7b5e94;
+
+            border-radius: 10px;
+
+            outline: none;
+
+            font-family:
+                "Prili Display",
+                serif;
+
+            font-size: 19px;
+
+            color: #000000;
+
+        }
+
+
+        .series-search::placeholder {
+
+            color: #000000;
+
+            opacity: 0.7;
+
+        }
+
+
+        .series-search:focus {
+
+            border-color: #FAEB92;
+
+        }
+
+
+        /* =========================
+           SEARCH RESULTS
+           ========================= */
+
+        .search-results {
+
+            width: 100%;
+
+            margin-top: 5px;
+
+            background: #7b5e94;
+
+            border-radius: 10px;
+
+            overflow: hidden;
+
+            display: none;
+
+            position: relative;
+
+            z-index: 10;
+
+        }
+
+
+        .search-result {
+
+            width: 100%;
+
+            padding:
+                9px 14px;
+
+            color: #000000;
+
+            font-family:
+                "Prili Display",
+                serif;
+
+            font-size: 19px;
+
+            text-decoration: none;
+
+            display: block;
+
+            border-bottom:
+                1px solid
+                rgba(0, 0, 0, 0.2);
+
+        }
+
+
+        .search-result:hover {
+
+            background: #FAEB92;
+
+        }
+
+
+        /* =========================
+           BACK TO SERIES BUTTON
+           ========================= */
+
+        .back-series-button {
+
+            display: inline-block;
+
+            margin-top: 35px;
+
+            padding:
+                8px 18px;
+
+            background: #FAEB92;
+
+            color: #7b5e94;
+
+            border-radius: 10px;
+
+            font-family:
+                "Prili Display",
+                serif;
+
+            font-size: 20px;
+
+            text-decoration: none;
+
+            box-shadow:
+                0 0 6px #F582A7;
+
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease;
+
+        }
+
+
+        .back-series-button:hover {
+
+            background: #F582A7;
+
+            transform:
+                translateY(-2px);
+
+        }
+
+
+        /* =========================
+           PURPLE CHARACTERS PANEL
+           ========================= */
+
+        .characters-panel {
+
+            width: 100%;
+
+            margin-top: 30px;
+
+            background: #7b5e94;
+
+            border-radius: 25px;
+
+            padding: 30px;
+
+            box-shadow:
+                0 5px 25px
+                rgba(0, 0, 0, 0.6);
+
+        }
+
+
+        /* =========================
+           CHARACTERS TITLE
+           ========================= */
+
+        .characters-title {
+
+            margin:
+                0 0 25px;
+
+            font-family:
+                "Soul Billani",
+                cursive;
+
+            font-size: 50px;
+
+            line-height: 1;
+
+            text-align: center;
+
+            color: #FAEB92;
+
+            text-shadow:
+                0 0 8px #F582A7,
+                0 0 16px #F582A7;
+
+        }
+
+
+        /* =========================
+           CHARACTER GRID
+           ========================= */
+
+        .character-grid {
+
+            width: 100%;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(5, 1fr);
+
+            gap: 20px;
+
+        }
+
+
+        /* =========================
+           CHARACTER CARD
+           ========================= */
+
+        .character-card {
+
+            display: block;
+
+            width: 100%;
+
+            background: #000000;
+
+            padding: 10px;
+
+            border-radius: 18px;
+
+            text-decoration: none;
+
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+
+        }
+
+
+        .character-card:hover {
+
+            transform:
+                translateY(-5px);
+
+            box-shadow:
+                0 5px 20px
+                rgba(0, 0, 0, 0.7);
+
+        }
+
+
+        /* =========================
+           CHARACTER IMAGE
+           ========================= */
+
+        .character-image {
+
+            width: 100%;
+
+            aspect-ratio: 1 / 1;
+
+            object-fit: cover;
+
+            display: block;
+
+            border-radius: 12px;
+
+        }
+
+
+        /* =========================
+           CHARACTER NAME
+           ========================= */
+
+        .character-name {
+
+            margin:
+                12px 5px 5px;
+
+            font-family:
+                "Prili Display",
+                serif;
+
+            font-size: 25px;
+
+            line-height: 1.1;
+
+            text-align: center;
+
+            color: #FAEB92;
+
+            text-shadow:
+                0 0 5px #F582A7,
+                0 0 10px #F582A7;
+
+        }
+
+
+        /* =========================
+           CHARACTER NAVIGATION
+           ========================= */
+
+        .character-navigation {
+
+            width: 100%;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-top: 30px;
+
+        }
+
+
+        .character-nav-button {
+
+            display: inline-block;
+
+            padding:
+                7px 14px;
+
+            background: #FAEB92;
+
+            color: #7b5e94;
+
+            border-radius: 10px;
+
+            font-family:
+                "Prili Display",
+                serif;
+
+            font-size: 19px;
+
+            text-decoration: none;
+
+            box-shadow:
+                0 0 6px #F582A7;
+
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease;
+
+        }
+
+
+        .character-nav-button:hover {
+
+            background: #F582A7;
+
+            transform:
+                translateY(-2px);
+
+        }
+
+
+        /* =========================
+           TABLETS
+           ========================= */
+
+        @media (max-width: 900px) {
+
+            .series-panel {
+
+                padding: 25px;
+
+                gap: 25px;
+
+            }
+
+
+            .series-name {
+
+                font-size: 50px;
+
+            }
+
+
+            .series-description {
+
+                font-size: 25px;
+
+            }
+
+
+            .series-category {
+
+                font-size: 25px;
+
+            }
+
+
+            .characters-panel {
+
+                padding: 25px;
+
+            }
+
+
+            .characters-title {
+
+                font-size: 42px;
+
+            }
+
+
+            .character-grid {
+
+                grid-template-columns:
+                    repeat(4, 1fr);
+
+                gap: 15px;
+
+            }
+
+        }
+
+
+        /* =========================
+           MOBILE
+           ========================= */
+
+        @media (max-width: 700px) {
+
+            .page {
+
+                padding:
+                    15px 10px 35px;
+
+            }
+
+
+            /* NAVIGATION */
+
+            .top-panel {
+
+                width: 100%;
+
+                flex-wrap: wrap;
+
+                gap: 3px;
+
+                padding:
+                    8px 6px;
+
+                border-radius: 18px;
+
+            }
+
+
+            .top-button {
+
+                font-size: 21px;
+
+                padding:
+                    6px 9px;
+
+                border-radius: 10px;
+
+            }
+
+
+            /* SERIES AREA */
+
+            .series-area {
+
+                width: 100%;
+
+                margin-top: 25px;
+
+            }
+
+
+            /* BLACK PANEL */
+
+            .series-panel {
+
+                flex-direction: column;
+
+                padding: 15px;
+
+                gap: 20px;
+
+                border-radius: 18px;
+
+            }
+
+
+            /* IMAGE */
+
+            .series-image {
+
+                width: 100%;
+
+                max-height: 500px;
+
+                border-radius: 12px;
+
+            }
+
+
+            /* INFO */
+
+            .series-info {
+
+                padding:
+                    5px 3px;
+
+            }
+
+
+            /* NAME */
+
+            .series-name {
+
+                font-size: 42px;
+
+            }
+
+
+            /* DESCRIPTION */
+
+            .series-description {
+
+                font-size: 23px;
+
+                margin-top: 18px;
+
+            }
+
+
+            /* CATEGORY */
+
+            .series-category {
+
+                font-size: 23px;
+
+                margin-top: 30px;
+
+            }
+
+
+            /* SEARCH */
+
+            .series-search-container {
+
+                margin-top: 25px;
+
+            }
+
+
+            .series-search {
+
+                height: 34px;
+
+                font-size: 17px;
+
+            }
+
+
+            .search-result {
+
+                font-size: 17px;
+
+            }
+
+
+            /* BACK TO SERIES */
+
+            .back-series-button {
+
+                margin-top: 25px;
+
+                font-size: 17px;
+
+            }
+
+
+            /* CHARACTERS PANEL */
+
+            .characters-panel {
+
+                margin-top: 20px;
+
+                padding: 15px;
+
+                border-radius: 18px;
+
+            }
+
+
+            /* TITLE */
+
+            .characters-title {
+
+                font-size: 35px;
+
+                margin-bottom: 20px;
+
+            }
+
+
+            /* GRID */
+
+            .character-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+                gap: 12px;
+
+            }
+
+
+            /* CARD */
+
+            .character-card {
+
+                padding: 7px;
+
+                border-radius: 14px;
+
+            }
+
+
+            .character-image {
+
+                border-radius: 9px;
+
+            }
+
+
+            .character-name {
+
+                font-size: 20px;
+
+                margin-top: 9px;
+
+            }
+
+
+            /* NAVIGATION */
+
+            .character-navigation {
+
+                margin-top: 22px;
+
+            }
+
+
+            .character-nav-button {
+
+                font-size: 17px;
+
+                padding:
+                    6px 11px;
+
+            }
+
+        }
+
+
+        /* =========================
+           SMALL PHONES
+           ========================= */
+
+        @media (max-width: 400px) {
+
+            .top-button {
+
+                font-size: 18px;
+
+                padding:
+                    5px 7px;
+
+            }
+
+
+            .series-panel {
+
+                padding: 12px;
+
+            }
+
+
+            .series-image {
+
+                max-height: 420px;
+
+            }
+
+
+            .series-name {
+
+                font-size: 35px;
+
+            }
+
+
+            .series-description {
+
+                font-size: 20px;
+
+            }
+
+
+            .series-category {
+
+                font-size: 20px;
+
+            }
+
+
+            .series-search {
+
+                font-size: 16px;
+
+            }
+
+
+            .characters-panel {
+
+                padding: 12px;
+
+            }
+
+
+            .characters-title {
+
+                font-size: 29px;
+
+            }
+
+
+            .character-grid {
+
+                gap: 10px;
+
+            }
+
+
+            .character-card {
+
+                padding: 6px;
+
+            }
+
+
+            .character-name {
+
+                font-size: 17px;
+
+            }
+
+
+            .character-nav-button {
+
+                font-size: 15px;
+
+            }
+
+        }
+
+
+        /* =========================
+           VERY SMALL PHONES
+           ========================= */
+
+        @media (max-width: 320px) {
+
+            .top-button {
+
+                font-size: 16px;
+
+                padding:
+                    4px 6px;
+
+            }
+
+
+            .series-panel {
+
+                padding: 10px;
+
+            }
+
+
+            .series-image {
+
+                max-height: 350px;
+
+            }
+
+
+            .series-name {
+
+                font-size: 30px;
+
+            }
+
+
+            .series-description {
+
+                font-size: 18px;
+
+            }
+
+
+            .series-category {
+
+                font-size: 18px;
+
+            }
+
+
+            .characters-panel {
+
+                padding: 10px;
+
+            }
+
+
+            .characters-title {
+
+                font-size: 25px;
+
+            }
+
+
+            .character-name {
+
+                font-size: 15px;
+
+            }
+
+
+            .character-nav-button {
+
+                font-size: 14px;
+
+                padding:
+                    5px 8px;
+
+            }
+
+        }
+
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="page">
+
+
+        <!-- =========================
+             TOP NAVIGATION
+             ========================= -->
+
+        <nav class="top-panel">
+
+
+            <a
+                href="../"
+                class="top-button"
+            >
+                Home
+            </a>
+
+
+            <a
+                href="../gallery"
+                class="top-button"
+            >
+                Gallery
+            </a>
+
+
+            <a
+                href="../series"
+                class="top-button"
+            >
+                Series
+            </a>
+
+
+            <a
+                href="../profile"
+                class="top-button"
+            >
+                Profile
+            </a>
+
+
+            <a
+                href="#"
+                class="top-button"
+            >
+                Logout
+            </a>
+
+
+        </nav>
+
+
+        <!-- =========================
+             SERIES AREA
+             ========================= -->
+
+        <main class="series-area">
+
+
+            <!-- =========================
+                 BLACK SERIES PANEL
+                 ========================= -->
+
+            <section class="series-panel">
+
+
+                <!-- SERIES IMAGE -->
+
+                <img
+                    src="https://media.discordapp.net/attachments/1534687942927188142/1538011679940677663/FF2804C1-32B2-4A75-90DC-4ED8B0787771.jpg?ex=6a81207f&is=6a7fceff&hm=cd423cc16b7bdc6e9391d7d45a4733ec2f17e439689048fc0eaf40ec9af42c1e&=&format=webp&width=575&height=1024"
+                    alt="Original or Unclassified"
+                    class="series-image"
+                >
+
+
+                <!-- SERIES INFORMATION -->
+
+                <div class="series-info">
+
+
+                    <!-- NAME -->
+
+                    <h1 class="series-name">
+
+                        Original or Unclassified
+
+                    </h1>
+
+
+                    <!-- DESCRIPTION -->
+
+                    <div class="series-description">
+
+                        Characters that do not belong to a specific
+                        series or have not been classified.
+
+                    </div>
+
+
+                    <!-- CATEGORY -->
+
+                    <div class="series-category">
+
+                        Category:
+                        <span class="category-name">
+                            Original
+                        </span>
+
+                    </div>
+
+
+                    <!-- CHARACTER SEARCH -->
+
+                    <div class="series-search-container">
+
+
+                        <input
+                            type="text"
+                            id="seriesSearch"
+                            class="series-search"
+                            placeholder="Search characters in this series..."
+                            autocomplete="off"
+                        >
+
+
+                        <div
+                            id="searchResults"
+                            class="search-results"
+                        ></div>
+
+
+                    </div>
+
+
+                    <!-- BACK TO SERIES -->
+
+                    <a
+                        href="../series"
+                        class="back-series-button"
+                    >
+                        𐂯 Back to Series
+                    </a>
+
+
+                </div>
+
+
+            </section>
+
+
+            <!-- =========================
+                 PURPLE CHARACTERS PANEL
+                 ========================= -->
+
+            <section class="characters-panel">
+
+
+                <!-- TITLE -->
+
+                <h2 class="characters-title">
+
+                    Characters
+
+                </h2>
+
+
+                <!-- CHARACTER GRID -->
+
+                <div class="character-grid">
+
+
+                    <!-- =====================
+                         UNKNOWN WAIFU
+                         ===================== -->
+
+                    <a
+                        href="../characters/unknown-waifu.html"
+                        class="character-card"
+                        data-character="Unknown Waifu"
+                    >
+
+
+                        <img
+                            src="https://media.discordapp.net/attachments/1534687942927188142/1538011581412155392/7CEE1934-4CF3-4FCD-9352-E6E8AD025576.jpg?ex=6a812067&is=6a7fcee7&hm=628f7900b79e756750b4ab6b5e421b4a6069edabacdc0ae9990cc9bfe4e83e9d&=&format=webp&width=575&height=1024"
+                            alt="Unknown Waifu"
+                            class="character-image"
+                        >
+
+
+                        <div class="character-name">
+
+                            Unknown Waifu
+
+                        </div>
+
+
+                    </a>
+
+
+                </div>
+
+
+                <!-- =========================
+                     CHARACTER NAVIGATION
+                     ========================= -->
+
+                <div class="character-navigation">
+
+
+                    <!--
+                        BACK BUTTON
+
+                        This is intentionally hidden
+                        because Unknown Waifu is
+                        currently the first character.
+                    -->
+
+
+                    <span></span>
+
+
+                    <!--
+                        NEXT BUTTON
+
+                        This will be added when
+                        another character exists.
+                    -->
+
+
+                </div>
+
+
+            </section>
+
+
+        </main>
+
+
+    </div>
+
+
+    <!-- =========================
+         SEARCH JAVASCRIPT
+         ========================= -->
+
+    <script>
+
+
+        /* =========================
+           CHARACTERS IN THIS SERIES
+           ========================= */
+
+        const characters = [
+
+            {
+                name: "Unknown Waifu",
+
+                url:
+                    "../characters/unknown-waifu.html"
+
+            }
+
+        ];
+
+
+        /* =========================
+           SEARCH ELEMENTS
+           ========================= */
+
+        const searchInput =
+            document.getElementById(
+                "seriesSearch"
+            );
+
+
+        const searchResults =
+            document.getElementById(
+                "searchResults"
+            );
+
+
+        /* =========================
+           SEARCH
+           ========================= */
+
+        searchInput.addEventListener(
+            "input",
+            function() {
+
+
+                const searchText =
+                    searchInput.value
+                        .trim()
+                        .toLowerCase();
+
+
+                searchResults.innerHTML =
+                    "";
+
+
+                /* =====================
+                   EMPTY SEARCH
+                   ===================== */
+
+                if (
+                    searchText === ""
+                ) {
+
+                    searchResults.style.display =
+                        "none";
+
+                    return;
+
+                }
+
+
+                /* =====================
+                   FIND CHARACTERS
+                   ===================== */
+
+                const matches =
+                    characters.filter(
+                        function(character) {
+
+                            return character.name
+                                .toLowerCase()
+                                .includes(
+                                    searchText
+                                );
+
+                        }
+                    );
+
+
+                /* =====================
+                   NO RESULTS
+                   ===================== */
+
+                if (
+                    matches.length === 0
+                ) {
+
+
+                    const noResults =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    noResults.className =
+                        "search-result";
+
+
+                    noResults.textContent =
+                        "No characters found.";
+
+
+                    searchResults.appendChild(
+                        noResults
+                    );
+
+
+                }
+
+
+                /* =====================
+                   RESULTS
+                   ===================== */
+
+                else {
+
+
+                    matches.forEach(
+                        function(character) {
+
+
+                            const result =
+                                document.createElement(
+                                    "a"
+                                );
+
+
+                            result.className =
+                                "search-result";
+
+
+                            result.textContent =
+                                character.name;
+
+
+                            result.href =
+                                character.url;
+
+
+                            searchResults.appendChild(
+                                result
+                            );
+
+
+                        }
+                    );
+
+
+                }
+
+
+                searchResults.style.display =
+                    "block";
+
+
+            }
+        );
+
+
+        /* =========================
+           CLOSE SEARCH RESULTS
+           ========================= */
+
+        document.addEventListener(
+            "click",
+            function(event) {
+
+
+                if (
+                    !event.target.closest(
+                        ".series-search-container"
+                    )
+                ) {
+
+                    searchResults.style.display =
+                        "none";
+
+                }
+
+            }
+        );
+
+
+    </script>
+
+
+</body>
+
+</html>

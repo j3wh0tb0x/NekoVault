@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>NekoVault</title>
+
+
+    <style>
+
+        /* =========================
+           FONTS
+           ========================= */
+
+        @font-face {
+
+            font-family: "Soul Billani";
+
+            src: url("SoulBillani.otf")
+                format("opentype");
+
+            font-weight: normal;
+
+            font-style: normal;
+
+        }
+
+
+        @font-face {
+
+            font-family: "Prili Display";
+
+            src: url("PriliDisplay.otf")
+                format("opentype");
+
+            font-weight: normal;
+
+            font-style: normal;
+
+        }
+
+
+        /* =========================
+           PAGE
+           ========================= */
+
+        * {
+
+            box-sizing: border-box;
+
+        }
+
+
+        html {
+
+            min-height: 100%;
+
+        }
+
+
+        body {
+
+            margin: 0;
+
+            min-height: 100vh;
+
+            background-image:
+                url("https://media.discordapp.net/attachments/1534687942927188142/1537979191574663218/download_1.jpg?ex=6a81023d&is=6a7fb0bd&hm=1673f225a38956cf717fa48e5b403c6d5ee121bf046d6908209402e086beb847&=&format=webp&width=1024&height=576");
+
+            background-size: cover;
+
+            background-position: center;
+
+            background-attachment: fixed;
+
+            background-repeat: no-repeat;
+
+            font-family: Arial, sans-serif;
+
+        }
+
+
+        /* =========================
+           MAIN CONTAINER
+           ========================= */
+
+        .page {
+
+            width: 100%;
+
+            min-height: 100vh;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            padding:
+                35px 20px 50px;
+
+        }
+
+
+        /* =========================
+           NEKOVAULT TITLE
+           ========================= */
+
+        .logo {
+
+            font-family:
+                "Soul Billani",
+                cursive;
+
+            font-size: 150px;
+
+            line-height: 1;
+
+            margin:
+                0 0 25px;
+
+            text-align: center;
+
+            letter-spacing: 2px;
+
+            text-shadow:
+                0 0 8px #F582A7,
+                0 0 16px #F582A7,
+                4px 4px 0px #F582A7;
+
+        }
+
+
+        .logo span:nth-child(odd) {
+
+            color: #FAEB92;
+
+        }
+
+
+        .logo span:nth-child(even) {
+
+            color: #FAEB92;
+
+        }
+
+
+        /* =========================
+           NAVIGATION
+           ========================= */
+
+        .navigation {
+
+            width: min(900px, 100%);
+
+            background: #7b5e94;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            padding:
+                12px 20px;
+
+            border-radius: 25px;
+
+            box-shadow:
+                0 5px 15px
+                rgba(0, 0, 0, 0.5);
+
+        }
+
+
+        .navigation a {
+
+            font-family:
+                "Prili Display",
+                serif;
+
+            color: #af626e;
+
+            text-decoration: none;
+
+            font-size: 50px;
+
+            padding:
+                5px 18px;
+
+            text-shadow:
+                0 0 5px #FAEB92,
+                0 0 10px #FAEB92;
+
+            transition:
+                color 0.2s ease,
+                transform 0.2s ease;
+
+        }
+
+
+        .navigation a:hover {
+
+            color: #FAEB92;
+
+            transform:
+                translateY(-2px);
+
+        }
+
+
+        /* =========================
+           IMAGE + BUTTONS
+           ========================= */
+
+        .image-section {
+
+            width: min(1100px, 100%);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 20px;
+
+            margin-top: 1px;
+
+        }
+
+
+        .main-image {
+
+            width: min(800px, 100%);
+
+            height: 350px;
+
+            display: block;
+
+            object-fit: cover;
+
+            object-position: center;
+
+            border-radius: 0;
+
+            box-shadow: none;
+
+        }
+
+
+        /* =========================
+           SIDE BUTTONS
+           ========================= */
+
+        .side-button {
+
+            width: 450px;
+
+            padding:
+                15px 12px;
+
+            background: #FAEB92;
+
+            color: #7b5e94;
+
+            font-family:
+                "Prili Display",
+                serif;
+
+            font-size: 25px;
+
+            text-align: center;
+
+            text-decoration: none;
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 0 8px #F582A7,
+                0 0 16px #F582A7;
+
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+
+        }
+
+
+        .side-button:hover {
+
+            transform:
+                translateY(-4px);
+
+            box-shadow:
+                0 0 12px #F582A7,
+                0 0 24px #F582A7;
+
+        }
+
+
+        /* =========================
+           DESCRIPTION BOX
+           ========================= */
+
+        .description-box {
+
+            width: min(800px, 100%);
+
+            margin-top: -1px;
+
+            padding:
+                25px 30px;
+
+            background: #7b5e94;
+
+            border-radius: 20px;
+
+            color: #af626e;
+
+            font-family:
+                "Prili Display",
+                serif;
+
+            font-size: 40px;
+
+            line-height: 1.4;
+
+            text-align: center;
+
+            text-shadow:
+                0 0 5px #FAEB92,
+                0 0 10px #FAEB92;
+
+            box-shadow:
+                0 5px 20px
+                rgba(0, 0, 0, 0.4);
+
+        }
+
+
+        /* =========================
+           BOT STATISTICS
+           ========================= */
+
+        .stats-section {
+
+            width: min(800px, 100%);
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 15px;
+
+            margin-top: 20px;
+
+        }
+
+
+        .stat-box {
+
+            min-height: 130px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            padding: 15px;
+
+            border-radius: 20px;
+
+            text-align: center;
+
+            font-family:
+                "Prili Display",
+                serif;
+
+            box-shadow: none;
+
+        }
+
+
+        .stat-number {
+
+            font-size: 38px;
+
+            line-height: 1;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .stat-title {
+
+            font-size: 28px;
+
+            line-height: 1.1;
+
+        }
+
+
+        .stat-black {
+
+            background: #000000;
+
+            color: #af626e;
+
+        }
+
+
+        .stat-pink {
+
+            background: #af626e;
+
+            color: #000000;
+
+        }
+
+
+        /* =========================
+           GALLERY INFORMATION
+           ========================= */
+
+        .gallery-info {
+
+            width: min(800px, 100%);
+
+            margin-top: 100px;
+
+            text-align: center;
+
+        }
+
+
+        /* =========================
+           GALLERY TITLE
+           ========================= */
+
+        .gallery-title {
+
+            margin:
+                0 0 20px;
+
+            font-family:
+                "Soul Billani",
+                cursive;
+
+            font-size: 60px;
+
+            line-height: 0.8;
+
+            color: #FAEB92;
+
+            text-shadow:
+                0 0 8px #F582A7,
+                0 0 16px #F582A7,
+                3px 3px 0 #F582A7;
+
+        }
+
+
+        /* =========================
+           GALLERY INFORMATION BOX
+           ========================= */
+
+        .gallery-info-box {
+
+            width: 100%;
+
+            padding: 30px;
+
+            background: #000000;
+
+            border-radius: 20px;
+
+            color: #FAEB92;
+
+            font-family:
+                "Prili Display",
+                serif;
+
+            font-size: 35px;
+
+            line-height: 1.0;
+
+            text-align: center;
+
+            text-shadow: none;
+
+            box-shadow:
+                0 5px 20px
+                rgba(0, 0, 0, 0.5);
+
+        }
+
+
+        /* =========================
+           GALLERY IMAGE + BUTTONS
+           ========================= */
+
+        .gallery-action-section {
+
+            width: 100%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 20px;
+
+            margin-top: 25px;
+
+        }
+
+
+        .gallery-image {
+
+            width: 55%;
+
+            max-width: 440px;
+
+            height: auto;
+
+            display: block;
+
+            object-fit: contain;
+
+        }
+
+
+        .gallery-action-buttons {
+
+            width: 45%;
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 20px;
+
+        }
+
+
+        .gallery-action-button {
+
+            display: block;
+
+            width: 100%;
+
+            padding:
+                18px 15px;
+
+            background: #F582A7;
+
+            color: #000000;
+
+            font-family:
+                "Prili Display",
+                serif;
+
+            font-size: 30px;
+
+            line-height: 1.1;
+
+            text-align: center;
+
+            text-decoration: none;
+
+            border-radius: 20px;
+
+            text-shadow:
+                0 0 5px #FAEB92,
+                0 0 10px #FAEB92;
+
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+
+        }
+
+
+        .gallery-action-button:hover {
+
+            transform:
+                translateY(-4px);
+
+            box-shadow:
+                0 0 10px #FAEB92,
+                0 0 20px #FAEB92;
+
+        }
+
+
+        /* =========================
+           TABLETS
+           ========================= */
+
+        @media (max-width: 1100px) {
+
+            .image-section {
+
+                width: 100%;
+
+                flex-wrap: wrap;
+
+                gap: 15px;
+
+            }
+
+
+            .main-image {
+
+                width: 100%;
+
+                order: 1;
+
+            }
+
+
+            .side-button {
+
+                width:
+                    calc(50% - 10px);
+
+                order: 2;
+
+            }
+
+        }
+
+
+        /* =========================
+           MOBILE
+           ========================= */
+
+        @media (max-width: 700px) {
+
+            .page {
+
+                padding:
+                    25px 12px 40px;
+
+            }
+
+
+            /* TITLE */
+
+            .logo {
+
+                font-size: 58px;
+
+                letter-spacing: 1px;
+
+                margin-bottom: 20px;
+
+            }
+
+
+            /* NAVIGATION */
+
+            .navigation {
+
+                width: 100%;
+
+                flex-wrap: wrap;
+
+                padding:
+                    8px 5px;
+
+                border-radius: 20px;
+
+            }
+
+
+            .navigation a {
+
+                font-size: 23px;
+
+                padding:
+                    7px 10px;
+
+                text-shadow:
+                    0 0 4px #FAEB92,
+                    0 0 8px #FAEB92;
+
+            }
+
+
+            /* IMAGE SECTION */
+
+            .image-section {
+
+                width: 100%;
+
+                display: flex;
+
+                flex-wrap: wrap;
+
+                gap: 12px;
+
+                margin-top: 20px;
+
+            }
+
+
+            /* IMAGE */
+
+            .main-image {
+
+                width: 100%;
+
+                height: 220px;
+
+                order: 1;
+
+            }
+
+
+            /* BUTTONS */
+
+            .side-button {
+
+                width:
+                    calc(50% - 6px);
+
+                padding:
+                    12px 6px;
+
+                font-size: 20px;
+
+                line-height: 1.2;
+
+                border-radius: 15px;
+
+                white-space: normal;
+
+                order: 2;
+
+            }
+
+
+            /* DESCRIPTION */
+
+            .description-box {
+
+                width: 100%;
+
+                margin-top: 15px;
+
+                padding:
+                    20px 15px;
+
+                border-radius: 15px;
+
+                font-size: 20px;
+
+                line-height: 1.4;
+
+                text-shadow:
+                    0 0 4px #FAEB92,
+                    0 0 8px #FAEB92;
+
+            }
+
+
+            /* STATISTICS */
+
+            .stats-section {
+
+                width: 100%;
+
+                grid-template-columns: 1fr;
+
+                gap: 12px;
+
+                margin-top: 15px;
+
+            }
+
+
+            .stat-box {
+
+                min-height: 100px;
+
+                border-radius: 15px;
+
+            }
+
+
+            .stat-number {
+
+                font-size: 32px;
+
+            }
+
+
+            .stat-title {
+
+                font-size: 23px;
+
+            }
+
+
+            /* GALLERY INFORMATION */
+
+            .gallery-info {
+
+                width: 100%;
+
+                margin-top: 80px;
+
+            }
+
+
+            .gallery-title {
+
+                font-size: 36px;
+
+                margin-bottom: 15px;
+
+                line-height: 1;
+
+            }
+
+
+            .gallery-info-box {
+
+                padding:
+                    22px 16px;
+
+                border-radius: 15px;
+
+                font-size: 20px;
+
+                line-height: 1.45;
+
+                color: #FAEB92;
+
+                text-shadow: none;
+
+            }
+
+
+            /* GALLERY IMAGE + BUTTONS */
+
+            .gallery-action-section {
+
+                width: 100%;
+
+                display: flex;
+
+                flex-direction: column;
+
+                gap: 15px;
+
+                margin-top: 20px;
+
+            }
+
+
+            .gallery-image {
+
+                width: 80%;
+
+                max-width: 350px;
+
+                order: 1;
+
+            }
+
+
+            .gallery-action-buttons {
+
+                width: 100%;
+
+                display: flex;
+
+                flex-direction: row;
+
+                gap: 12px;
+
+                order: 2;
+
+            }
+
+
+            .gallery-action-button {
+
+                width:
+                    calc(50% - 6px);
+
+                padding:
+                    14px 8px;
+
+                font-size: 20px;
+
+                border-radius: 15px;
+
+                text-shadow:
+                    0 0 4px #FAEB92,
+                    0 0 8px #FAEB92;
+
+            }
+
+        }
+
+
+        /* =========================
+           SMALL PHONES
+           ========================= */
+
+        @media (max-width: 400px) {
+
+            .logo {
+
+                font-size: 48px;
+
+            }
+
+
+            .navigation a {
+
+                font-size: 20px;
+
+                padding:
+                    6px 8px;
+
+            }
+
+
+            /* IMAGE */
+
+            .main-image {
+
+                height: 190px;
+
+            }
+
+
+            /* BUTTONS */
+
+            .side-button {
+
+                font-size: 17px;
+
+                padding:
+                    10px 4px;
+
+                border-radius: 12px;
+
+            }
+
+
+            /* DESCRIPTION */
+
+            .description-box {
+
+                font-size: 18px;
+
+                padding:
+                    18px 12px;
+
+                border-radius: 12px;
+
+            }
+
+
+            /* STATISTICS */
+
+            .stat-box {
+
+                min-height: 90px;
+
+                border-radius: 12px;
+
+            }
+
+
+            .stat-number {
+
+                font-size: 28px;
+
+            }
+
+
+            .stat-title {
+
+                font-size: 20px;
+
+            }
+
+
+            /* GALLERY INFORMATION */
+
+            .gallery-info {
+
+                margin-top: 70px;
+
+            }
+
+
+            .gallery-title {
+
+                font-size: 28px;
+
+            }
+
+
+            .gallery-info-box {
+
+                padding:
+                    18px 12px;
+
+                border-radius: 12px;
+
+                font-size: 17px;
+
+                color: #FAEB92;
+
+                text-shadow: none;
+
+            }
+
+
+            /* GALLERY IMAGE + BUTTONS */
+
+            .gallery-action-section {
+
+                gap: 12px;
+
+                margin-top: 15px;
+
+            }
+
+
+            .gallery-image {
+
+                width: 85%;
+
+            }
+
+
+            .gallery-action-buttons {
+
+                gap: 8px;
+
+            }
+
+
+            .gallery-action-button {
+
+                font-size: 17px;
+
+                padding:
+                    11px 5px;
+
+                border-radius: 12px;
+
+            }
+
+        }
+
+
+        /* =========================
+           VERY SMALL PHONES
+           ========================= */
+
+        @media (max-width: 320px) {
+
+            .side-button {
+
+                width: 100%;
+
+            }
+
+
+            .main-image {
+
+                height: 180px;
+
+            }
+
+
+            .description-box {
+
+                font-size: 16px;
+
+            }
+
+
+            .stat-number {
+
+                font-size: 26px;
+
+            }
+
+
+            .stat-title {
+
+                font-size: 18px;
+
+            }
+
+
+            .gallery-title {
+
+                font-size: 24px;
+
+            }
+
+
+            .gallery-info-box {
+
+                font-size: 16px;
+
+            }
+
+
+            .gallery-image {
+
+                width: 90%;
+
+            }
+
+
+            .gallery-action-buttons {
+
+                flex-direction: column;
+
+            }
+
+
+            .gallery-action-button {
+
+                width: 100%;
+
+                font-size: 18px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="page">
+
+
+        <!-- =========================
+             WEBSITE TITLE
+             ========================= -->
+
+        <h1 class="logo">
+
+            <span>N</span>
+            <span>e</span>
+            <span>k</span>
+            <span>o</span>
+            <span>V</span>
+            <span>a</span>
+            <span>u</span>
+            <span>l</span>
+            <span>t</span>
+
+        </h1>
+
+
+        <!-- =========================
+             NAVIGATION
+             ========================= -->
+
+        <nav class="navigation">
+
+            <a href="/">
+                Home
+            </a>
+
+            <a href="/gallery">
+                Gallery
+            </a>
+
+            <a href="/features">
+                Features
+            </a>
+
+            <a href="/tos">
+                ToS/Privacy Policy
+            </a>
+
+        </nav>
+
+
+        <!-- =========================
+             BLAIR IMAGE + SIDE BUTTONS
+             ========================= -->
+
+        <div class="image-section">
+
+
+            <!-- PLAY BUTTON -->
+
+            <a
+                href="#"
+                class="side-button"
+            >
+
+                𐂯 Play With Me
+
+            </a>
+
+
+            <!-- BLAIR IMAGE -->
+
+            <img
+                src="https://media.discordapp.net/attachments/1534687942927188142/1537986685818634290/F9w-LEDWIAAcmXr_1.png?ex=6a810938&is=6a7fb7b8&hm=758f89aa85ba907412b4846f3a82480792e02df1566f0c86cdb3970b0cb9fe26&=&format=webp&quality=lossless&width=768&height=399"
+                alt="NekoVault"
+                class="main-image"
+            >
+
+
+            <!-- DISCORD BUTTON -->
+
+            <a
+                href="#"
+                class="side-button"
+            >
+
+                ♡ Discord Server
+
+            </a>
+
+
+        </div>
+
+
+        <!-- =========================
+             DESCRIPTION
+             ========================= -->
+
+        <div class="description-box">
+
+            NekoVault is a NSFW 18+ discord bot that includes characters from anime, vtubers, video games, and even furries.
+            Come play with me, may the biggest collector be immersed in lewdness! 𐂯
+
+        </div>
+
+
+        <!-- =========================
+             BOT STATISTICS
+             ========================= -->
+
+        <div class="stats-section">
+
+
+            <!-- PLAYERS -->
+
+            <div class="stat-box stat-black">
+
+                <div
+                    class="stat-number"
+                    id="player-count"
+                >
+
+                    0
+
+                </div>
+
+                <div class="stat-title">
+
+                    ♡ Players
+
+                </div>
+
+            </div>
+
+
+            <!-- PURR-FECT CARDS -->
+
+            <div class="stat-box stat-pink">
+
+                <div
+                    class="stat-number"
+                    id="card-count"
+                >
+
+                    0
+
+                </div>
+
+                <div class="stat-title">
+
+                    𐂯 Purr-fect Cards
+
+                </div>
+
+            </div>
+
+
+            <!-- DISCORD SERVERS -->
+
+            <div class="stat-box stat-black">
+
+                <div
+                    class="stat-number"
+                    id="server-count"
+                >
+
+                    0
+
+                </div>
+
+                <div class="stat-title">
+
+                    ♡ Discord Servers
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- =========================
+             GALLERY INFORMATION
+             ========================= -->
+
+        <section class="gallery-info">
+
+
+            <!-- GALLERY TITLE -->
+
+            <h2 class="gallery-title">
+
+                <span>── ⋆⋅</span>
+                Gallery Information
+                <span>⋅⋆ ──</span>
+
+            </h2>
+
+
+            <!-- GALLERY INFORMATION BOX -->
+
+            <div class="gallery-info-box">
+
+                All images in gallery are player submissions.
+                NekoVault allows players to submit their own images into the bot
+                from various amazing and talented artists ♡
+                Each image submitted will show the artist's name and a link to
+                their profile (whichever profile the image came from).
+
+            </div>
+
+
+            <!-- =========================
+                 GALLERY IMAGE + BUTTONS
+                 ========================= -->
+
+            <div class="gallery-action-section">
+
+
+                <!-- GALLERY IMAGE -->
+
+                <img
+                    src="https://cdn.discordapp.com/attachments/1534687942927188142/1538002921805848686/d5d8uud-29f41a77-008d-4283-b854-7be470c54367-removebg-preview.png?ex=6a811857&is=6a7fc6d7&hm=05577110ed0b617b7d97f5ab57cba5b9d7405ec5d00ebc7c09e20eeba5958736&"
+                    alt="Gallery"
+                    class="gallery-image"
+                >
+
+
+                <!-- GALLERY BUTTONS -->
+
+                <div class="gallery-action-buttons">
+
+                    <a
+                        href="/gallery"
+                        class="gallery-action-button"
+                    >
+
+                        View Gallery
+
+                    </a>
+
+
+                    <a
+                        href="#"
+                        class="gallery-action-button"
+                    >
+
+                        Submit Images
+
+                    </a>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+    </div>
+
+</body>
+
+</html>
