@@ -15,7 +15,6 @@
 
     <style>
 
-
         /* =========================
            FONTS
            ========================= */
@@ -28,7 +27,6 @@
                 format("opentype");
 
             font-weight: normal;
-
             font-style: normal;
 
         }
@@ -42,7 +40,6 @@
                 format("opentype");
 
             font-weight: normal;
-
             font-style: normal;
 
         }
@@ -141,10 +138,6 @@
 
         }
 
-
-        /* =========================
-           NAVIGATION BUTTONS
-           ========================= */
 
         .top-button {
 
@@ -803,6 +796,20 @@
             }
 
 
+            .character-grid {
+
+                gap: 8px;
+
+            }
+
+
+            .character-name {
+
+                font-size: 15px;
+
+            }
+
+
             .empty-slot {
 
                 font-size: 15px;
@@ -810,7 +817,6 @@
             }
 
         }
-
 
     </style>
 
@@ -949,7 +955,7 @@
             >
 
                 <img
-                    src="/characters/unknown%20waifu.jpg"
+                    src="characters/unknown%20waifu.jpg"
                     alt="Unknown Waifu"
                     class="character-image"
                 >
@@ -971,7 +977,7 @@
             >
 
                 <img
-                    src="/characters/blair.png"
+                    src="characters/blair.png"
                     alt="Blair"
                     class="character-image"
                 >
@@ -993,7 +999,7 @@
             >
 
                 <img
-                    src="/characters/miko%20yae.png"
+                    src="characters/miko%20yae.png"
                     alt="Miko Yae"
                     class="character-image"
                 >
@@ -1015,7 +1021,7 @@
             >
 
                 <img
-                    src="/characters/albedo.png"
+                    src="characters/albedo.png"
                     alt="Albedo"
                     class="character-image"
                 >
@@ -1037,7 +1043,7 @@
             >
 
                 <img
-                    src="/characters/michiru%20kagemori%20beats.jpg"
+                    src="characters/michiru%20kagemori%20beats.jpg"
                     alt="Michiru Kagemori (Beastman)"
                     class="character-image"
                 >
@@ -1057,77 +1063,96 @@
                 Coming Soon
             </div>
 
-            <div class="empty-slot">
-                Coming Soon
-            </div>
 
             <div class="empty-slot">
                 Coming Soon
             </div>
 
-            <div class="empty-slot">
-                Coming Soon
-            </div>
 
             <div class="empty-slot">
                 Coming Soon
             </div>
 
-            <div class="empty-slot">
-                Coming Soon
-            </div>
 
             <div class="empty-slot">
                 Coming Soon
             </div>
 
-            <div class="empty-slot">
-                Coming Soon
-            </div>
 
             <div class="empty-slot">
                 Coming Soon
             </div>
 
-            <div class="empty-slot">
-                Coming Soon
-            </div>
 
             <div class="empty-slot">
                 Coming Soon
             </div>
 
-            <div class="empty-slot">
-                Coming Soon
-            </div>
 
             <div class="empty-slot">
                 Coming Soon
             </div>
 
-            <div class="empty-slot">
-                Coming Soon
-            </div>
 
             <div class="empty-slot">
                 Coming Soon
             </div>
 
-            <div class="empty-slot">
-                Coming Soon
-            </div>
 
             <div class="empty-slot">
                 Coming Soon
             </div>
 
-            <div class="empty-slot">
-                Coming Soon
-            </div>
 
             <div class="empty-slot">
                 Coming Soon
             </div>
+
+
+            <div class="empty-slot">
+                Coming Soon
+            </div>
+
+
+            <div class="empty-slot">
+                Coming Soon
+            </div>
+
+
+            <div class="empty-slot">
+                Coming Soon
+            </div>
+
+
+            <div class="empty-slot">
+                Coming Soon
+            </div>
+
+
+            <div class="empty-slot">
+                Coming Soon
+            </div>
+
+
+            <div class="empty-slot">
+                Coming Soon
+            </div>
+
+
+            <div class="empty-slot">
+                Coming Soon
+            </div>
+
+
+            <div class="empty-slot">
+                Coming Soon
+            </div>
+
+
+            <div class="empty-slot">
+                Coming Soon
+            </div>
+
 
             <div class="empty-slot">
                 Coming Soon
@@ -1203,6 +1228,7 @@
     searchInput.addEventListener(
         "keydown",
         function(event) {
+
 
             if (
                 event.key !== "Enter"
@@ -1286,6 +1312,7 @@
                 matches.forEach(
                     function(character) {
 
+
                         const result =
                             document.createElement(
                                 "div"
@@ -1365,6 +1392,7 @@
     document.addEventListener(
         "click",
         function(event) {
+
 
             const searchContainer =
                 document.querySelector(
