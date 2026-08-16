@@ -72,7 +72,7 @@
             min-height: 100vh;
 
             background-image:
-                url("images/background/background.jpg");
+                url("/images/background/background.jpg");
 
             background-size: cover;
 
@@ -117,18 +117,15 @@
 
         .logo {
 
+            width: 100%;
+
+            max-width: 1100px;
+
             font-family:
                 "Soul Billani",
                 cursive;
 
-            /*
-             * Responsive size.
-             * This automatically gets smaller
-             * on smaller screens.
-             */
-
-            font-size:
-                clamp(50px, 12vw, 150px);
+            font-size: 150px;
 
             line-height: 1;
 
@@ -137,11 +134,9 @@
 
             text-align: center;
 
-            letter-spacing: 0;
+            letter-spacing: 2px;
 
             white-space: nowrap;
-
-            width: 100%;
 
             text-shadow:
                 0 0 8px #F582A7,
@@ -151,14 +146,7 @@
         }
 
 
-        .logo span:nth-child(odd) {
-
-            color: #FAEB92;
-
-        }
-
-
-        .logo span:nth-child(even) {
+        .logo span {
 
             color: #FAEB92;
 
@@ -673,38 +661,27 @@
 
 
             /* =====================
-               MOBILE LOGO
+               MOBILE TITLE
                ===================== */
 
             .logo {
 
-                /*
-                 * Smaller responsive size
-                 * so ALL of NekoVault fits.
-                 */
+                width: 100%;
 
-                font-size:
-                    clamp(32px, 11vw, 50px);
+                font-size: 52px;
 
                 letter-spacing: 0;
 
-                line-height: 1;
-
-                width: 100%;
+                margin:
+                    0 0 18px;
 
                 white-space: nowrap;
 
-                text-align: center;
-
-                margin:
-                    0 0 20px;
-
-                /*
-                 * Prevents the logo from
-                 * pushing outside the screen.
-                 */
-
                 overflow: visible;
+
+                transform: scaleX(0.92);
+
+                transform-origin: center;
 
             }
 
@@ -742,7 +719,7 @@
 
 
             /* =====================
-               MOBILE IMAGE SECTION
+               IMAGE SECTION
                ===================== */
 
             .image-section {
@@ -772,7 +749,7 @@
 
 
             /* =====================
-               MOBILE BUTTONS
+               BUTTONS
                ===================== */
 
             .side-button {
@@ -797,7 +774,7 @@
 
 
             /* =====================
-               MOBILE DESCRIPTION
+               DESCRIPTION
                ===================== */
 
             .description-box {
@@ -823,7 +800,7 @@
 
 
             /* =====================
-               MOBILE STATISTICS
+               STATISTICS
                ===================== */
 
             .stats-section {
@@ -863,7 +840,7 @@
 
 
             /* =====================
-               MOBILE GALLERY
+               GALLERY INFORMATION
                ===================== */
 
             .gallery-info {
@@ -905,7 +882,7 @@
 
 
             /* =====================
-               MOBILE GALLERY IMAGE
+               GALLERY IMAGE
                ===================== */
 
             .gallery-action-section {
@@ -978,17 +955,11 @@
 
             .logo {
 
-                /*
-                 * Automatically scales down
-                 * for smaller phones.
-                 */
+                font-size: 45px;
 
-                font-size:
-                    clamp(28px, 11vw, 42px);
+                transform: scaleX(0.88);
 
-                letter-spacing: 0;
-
-                white-space: nowrap;
+                margin-bottom: 16px;
 
             }
 
@@ -1132,13 +1103,9 @@
 
             .logo {
 
-                font-size: 29px;
+                font-size: 39px;
 
-                letter-spacing: 0;
-
-                white-space: nowrap;
-
-                width: 100%;
+                transform: scaleX(0.86);
 
             }
 
@@ -1271,11 +1238,13 @@
 
 
         <!-- =========================
-             BLAIR IMAGE + SIDE BUTTONS
+             BLAIR TOP IMAGE + BUTTONS
              ========================= -->
 
         <div class="image-section">
 
+
+            <!-- PLAY BUTTON -->
 
             <a
                 href="#"
@@ -1287,14 +1256,16 @@
             </a>
 
 
-            <!-- BLAIR -->
+            <!-- BLAIR TOP IMAGE -->
 
             <img
-                src="images/characters/blair.png"
+                src="/images/home/blair%20top.png"
                 alt="NekoVault"
                 class="main-image"
             >
 
+
+            <!-- DISCORD BUTTON -->
 
             <a
                 href="#"
@@ -1328,6 +1299,8 @@
         <div class="stats-section">
 
 
+            <!-- PLAYERS -->
+
             <div class="stat-box stat-black">
 
                 <div
@@ -1348,6 +1321,8 @@
             </div>
 
 
+            <!-- PURR-FECT CARDS -->
+
             <div class="stat-box stat-pink">
 
                 <div
@@ -1367,6 +1342,8 @@
 
             </div>
 
+
+            <!-- DISCORD SERVERS -->
 
             <div class="stat-box stat-black">
 
@@ -1398,6 +1375,8 @@
         <section class="gallery-info">
 
 
+            <!-- GALLERY TITLE -->
+
             <h2 class="gallery-title">
 
                 <span>── ⋆⋅</span>
@@ -1406,6 +1385,8 @@
 
             </h2>
 
+
+            <!-- GALLERY INFORMATION BOX -->
 
             <div class="gallery-info-box">
 
@@ -1418,15 +1399,23 @@
             </div>
 
 
+            <!-- =========================
+                 BLAIR BOTTOM IMAGE + BUTTONS
+                 ========================= -->
+
             <div class="gallery-action-section">
 
 
+                <!-- BLAIR BOTTOM IMAGE -->
+
                 <img
-                    src="images/gallery/gallery.png"
+                    src="/images/home/blair%20bottom.png"
                     alt="Gallery"
                     class="gallery-image"
                 >
 
+
+                <!-- GALLERY BUTTONS -->
 
                 <div class="gallery-action-buttons">
 
