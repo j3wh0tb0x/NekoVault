@@ -3,708 +3,401 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
-    <title>Michiru Kagemori (Beastman) - NekoVault</title>
+<title>Michiru Kagemori - NekoVault</title>
 
+<style>
 
-    <style>
+@font-face {
+    font-family: "Soul Billani";
+    src: url("../SoulBillani.otf") format("opentype");
+}
 
-        /* =========================
-           FONTS
-           ========================= */
+@font-face {
+    font-family: "Prili Display";
+    src: url("../PriliDisplay.otf") format("opentype");
+}
 
-        @font-face {
+* {
+    box-sizing: border-box;
+}
 
-            font-family: "Soul Billani";
+body {
 
-            src: url("../SoulBillani.otf")
-                format("opentype");
+    margin: 0;
 
-            font-weight: normal;
+    min-height: 100vh;
 
-            font-style: normal;
+    background-image:
+        url("../images/background/background.jpg");
 
-        }
+    background-size: cover;
 
+    background-position: center;
 
-        @font-face {
+    background-attachment: fixed;
 
-            font-family: "Prili Display";
+    background-repeat: no-repeat;
 
-            src: url("../PriliDisplay.otf")
-                format("opentype");
+    background-color: #1e5da5;
 
-            font-weight: normal;
+    font-family: Arial, sans-serif;
+}
 
-            font-style: normal;
+.page {
 
-        }
+    width: 100%;
 
+    min-height: 100vh;
 
-        /* =========================
-           PAGE
-           ========================= */
+    display: flex;
 
-        * {
+    flex-direction: column;
 
-            box-sizing: border-box;
+    align-items: center;
 
-        }
+    padding: 30px 20px 50px;
+}
 
+.top-panel {
 
-        html {
+    width: min(1000px, 100%);
 
-            min-height: 100%;
+    background: #000000;
 
-        }
+    display: flex;
 
+    justify-content: center;
 
-        body {
+    align-items: center;
 
-            margin: 0;
+    gap: 10px;
 
-            min-height: 100vh;
+    padding: 15px 20px;
 
-            background-image:
-                url("https://media.discordapp.net/attachments/1534687942927188142/1537979191574663218/download_1.jpg?ex=6a81023d&is=6a7fb0bd&hm=1673f225a38956cf717fa48e5b403c6d5ee121bf046d6908209402e086beb847&=&format=webp&width=1024&height=576");
+    border-radius: 25px;
+}
 
-            background-size: cover;
+.top-button {
 
-            background-position: center;
+    font-family:
+        "Prili Display",
+        serif;
 
-            background-attachment: fixed;
+    color: #FAEB92;
 
-            background-repeat: no-repeat;
+    text-decoration: none;
 
-            background-color: #1e5da5;
+    font-size: 35px;
 
-            font-family: Arial, sans-serif;
+    padding: 8px 18px;
 
-        }
+    text-shadow:
+        0 0 5px #F582A7,
+        0 0 10px #F582A7;
+}
 
+.top-button:hover {
+    color: #F582A7;
+}
 
-        /* =========================
-           MAIN PAGE
-           ========================= */
+.character-area {
 
-        .page {
+    width: min(1100px, 100%);
 
-            width: 100%;
+    margin-top: 50px;
+}
 
-            min-height: 100vh;
+.character-panel {
 
-            display: flex;
+    background: #000000;
 
-            flex-direction: column;
+    border-radius: 25px;
 
-            align-items: center;
+    padding: 30px;
 
-            padding:
-                30px 20px 50px;
+    display: flex;
 
-        }
+    gap: 40px;
 
+    box-shadow:
+        0 5px 25px rgba(0,0,0,0.7);
+}
 
-        /* =========================
-           TOP NAVIGATION
-           ========================= */
+.character-image {
 
-        .top-panel {
+    width: 45%;
 
-            width: min(1000px, 100%);
+    max-height: 700px;
 
-            background: #000000;
+    object-fit: contain;
 
-            display: flex;
+    border-radius: 18px;
+}
 
-            justify-content: center;
+.character-info {
 
-            align-items: center;
+    flex: 1;
 
-            gap: 10px;
+    padding: 20px 10px;
+}
 
-            padding:
-                15px 20px;
+.character-name {
 
-            border-radius: 25px;
+    margin: 0;
 
-            box-shadow:
-                0 5px 20px
-                rgba(0, 0, 0, 0.5);
+    font-family:
+        "Soul Billani",
+        cursive;
 
-        }
+    font-size: 65px;
 
+    color: #FAEB92;
 
-        .top-button {
+    text-shadow:
+        0 0 8px #F582A7,
+        0 0 16px #F582A7,
+        3px 3px 0 #F582A7;
+}
 
-            font-family:
-                "Prili Display",
-                serif;
+.character-series {
 
-            color: #FAEB92;
+    margin-top: 15px;
 
-            text-decoration: none;
+    margin-bottom: 45px;
 
-            font-size: 35px;
+    font-family:
+        "Prili Display",
+        serif;
 
-            padding:
-                8px 18px;
+    font-size: 40px;
+}
 
-            border-radius: 15px;
+.series-link {
 
-            text-shadow:
-                0 0 5px #F582A7,
-                0 0 10px #F582A7;
+    color: #FAEB92;
 
-            transition:
-                transform 0.2s ease,
-                color 0.2s ease;
+    text-decoration: none;
 
-        }
+    text-shadow:
+        0 0 5px #F582A7,
+        0 0 10px #F582A7;
+}
 
+.series-link:hover {
+    color: #F582A7;
+}
 
-        .top-button:hover {
+.character-detail {
 
-            color: #F582A7;
+    margin: 22px 0;
 
-            transform:
-                translateY(-3px);
+    font-family:
+        "Prili Display",
+        serif;
 
-            text-shadow:
-                0 0 5px #FAEB92,
-                0 0 12px #FAEB92;
+    font-size: 37px;
 
-        }
+    color: #FAEB92;
+}
 
+.age {
+    color: #FF0000;
+}
 
-        /* =========================
-           CHARACTER AREA
-           ========================= */
+.back-button {
 
-        .character-area {
+    display: inline-block;
 
-            width: min(1100px, 100%);
+    margin-top: 35px;
 
-            margin-top: 50px;
+    padding: 8px 18px;
 
-        }
+    background: #FAEB92;
 
+    color: #7b5e94;
 
-        /* =========================
-           CHARACTER PANEL
-           ========================= */
+    border-radius: 10px;
 
-        .character-panel {
+    font-family:
+        "Prili Display",
+        serif;
 
-            width: 100%;
+    font-size: 20px;
 
-            background: #000000;
+    text-decoration: none;
+}
 
-            border-radius: 25px;
+.back-button:hover {
+    background: #F582A7;
+}
 
-            padding: 30px;
 
-            display: flex;
+@media (max-width: 700px) {
 
-            gap: 40px;
+    .page {
+        padding: 15px 10px 35px;
+    }
 
-            box-shadow:
-                0 5px 25px
-                rgba(0, 0, 0, 0.7);
+    .top-panel {
+        flex-wrap: wrap;
+        gap: 3px;
+        padding: 8px 6px;
+    }
 
-        }
+    .top-button {
+        font-size: 21px;
+        padding: 6px 9px;
+    }
 
+    .character-area {
+        margin-top: 25px;
+    }
 
-        /* =========================
-           CHARACTER IMAGE
-           ========================= */
+    .character-panel {
+        flex-direction: column;
+        padding: 15px;
+        gap: 18px;
+    }
 
-        .character-image {
+    .character-image {
+        width: 100%;
+        max-height: 500px;
+    }
 
-            width: 45%;
+    .character-info {
+        width: 100%;
+        padding: 5px 3px;
+    }
 
-            max-height: 700px;
+    .character-name {
+        font-size: 42px;
+    }
 
-            object-fit: contain;
+    .character-series {
+        font-size: 25px;
+        margin-bottom: 25px;
+    }
 
-            display: block;
+    .character-detail {
+        font-size: 24px;
+    }
+}
 
-            border-radius: 18px;
+@media (max-width: 400px) {
 
-        }
+    .top-button {
+        font-size: 18px;
+    }
 
+    .character-name {
+        font-size: 35px;
+    }
 
-        /* =========================
-           CHARACTER INFORMATION
-           ========================= */
+    .character-series {
+        font-size: 21px;
+    }
 
-        .character-info {
+    .character-detail {
+        font-size: 20px;
+    }
+}
 
-            flex: 1;
-
-            padding:
-                20px 10px;
-
-        }
-
-
-        /* =========================
-           CHARACTER NAME
-           ========================= */
-
-        .character-name {
-
-            margin: 0;
-
-            font-family:
-                "Soul Billani",
-                cursive;
-
-            font-size: 65px;
-
-            line-height: 1.05;
-
-            color: #FAEB92;
-
-            text-shadow:
-                0 0 8px #F582A7,
-                0 0 16px #F582A7,
-                3px 3px 0 #F582A7;
-
-        }
-
-
-        /* =========================
-           SERIES
-           ========================= */
-
-        .character-series {
-
-            margin-top: 15px;
-
-            margin-bottom: 45px;
-
-            font-family:
-                "Prili Display",
-                serif;
-
-            font-size: 40px;
-
-            color: #FAEB92;
-
-            text-shadow:
-                0 0 5px #F582A7,
-                0 0 10px #F582A7;
-
-        }
-
-
-        /* =========================
-           CHARACTER DETAILS
-           ========================= */
-
-        .character-detail {
-
-            margin:
-                22px 0;
-
-            font-family:
-                "Prili Display",
-                serif;
-
-            font-size: 37px;
-
-            color: #FAEB92;
-
-            text-shadow:
-                0 0 5px #F582A7,
-                0 0 10px #F582A7;
-
-        }
-
-
-        /* =========================
-           AGE
-           ========================= */
-
-        .age {
-
-            color: #FF0000;
-
-            text-shadow: none;
-
-        }
-
-
-        /* =========================
-           BACK BUTTON
-           ========================= */
-
-        .back-button {
-
-            display: inline-block;
-
-            margin-top: 35px;
-
-            padding:
-                8px 18px;
-
-            background: #FAEB92;
-
-            color: #7b5e94;
-
-            border-radius: 10px;
-
-            font-family:
-                "Prili Display",
-                serif;
-
-            font-size: 20px;
-
-            text-decoration: none;
-
-            box-shadow:
-                0 0 6px #F582A7;
-
-            transition:
-                transform 0.2s ease,
-                background 0.2s ease;
-
-        }
-
-
-        .back-button:hover {
-
-            background: #F582A7;
-
-            transform:
-                translateY(-2px);
-
-        }
-
-
-        /* =========================
-           MOBILE
-           ========================= */
-
-        @media (max-width: 700px) {
-
-            .page {
-
-                padding:
-                    20px 12px 40px;
-
-            }
-
-
-            .top-panel {
-
-                width: 100%;
-
-                flex-wrap: wrap;
-
-                gap: 5px;
-
-                padding:
-                    10px 8px;
-
-                border-radius: 20px;
-
-            }
-
-
-            .top-button {
-
-                font-size: 23px;
-
-                padding:
-                    7px 10px;
-
-                border-radius: 12px;
-
-            }
-
-
-            .character-area {
-
-                width: 100%;
-
-                margin-top: 30px;
-
-            }
-
-
-            .character-panel {
-
-                flex-direction: column;
-
-                padding: 18px;
-
-                gap: 20px;
-
-                border-radius: 20px;
-
-            }
-
-
-            .character-image {
-
-                width: 100%;
-
-                max-height: 600px;
-
-                border-radius: 14px;
-
-            }
-
-
-            .character-info {
-
-                padding:
-                    10px 5px;
-
-            }
-
-
-            .character-name {
-
-                font-size: 48px;
-
-            }
-
-
-            .character-series {
-
-                font-size: 25px;
-
-                margin-bottom: 30px;
-
-            }
-
-
-            .character-detail {
-
-                font-size: 24px;
-
-                margin:
-                    18px 0;
-
-            }
-
-
-            .back-button {
-
-                font-size: 18px;
-
-            }
-
-        }
-
-
-        /* =========================
-           SMALL PHONES
-           ========================= */
-
-        @media (max-width: 400px) {
-
-            .top-button {
-
-                font-size: 19px;
-
-                padding:
-                    6px 8px;
-
-            }
-
-
-            .character-panel {
-
-                padding: 12px;
-
-            }
-
-
-            .character-name {
-
-                font-size: 40px;
-
-            }
-
-
-            .character-series {
-
-                font-size: 22px;
-
-            }
-
-
-            .character-detail {
-
-                font-size: 21px;
-
-            }
-
-        }
-
-    </style>
+</style>
 
 </head>
 
-
 <body>
-
 
 <div class="page">
 
+<nav class="top-panel">
 
-    <!-- =========================
-         TOP NAVIGATION
-         ========================= -->
+<a href="/" class="top-button">
+Home
+</a>
 
-    <nav class="top-panel">
+<a href="/gallery" class="top-button">
+Gallery
+</a>
 
+<a href="/characters" class="top-button">
+Characters
+</a>
 
-        <a
-            href="/"
-            class="top-button"
-        >
-            Home
-        </a>
+<a href="/series-index.html" class="top-button">
+Series
+</a>
 
+<a href="/profile" class="top-button">
+Profile
+</a>
 
-        <a
-            href="/gallery"
-            class="top-button"
-        >
-            Gallery
-        </a>
+</nav>
 
+<main class="character-area">
 
-        <a
-            href="/characters"
-            class="top-button"
-        >
-            Characters
-        </a>
+<section class="character-panel">
 
+<img
+    src="michiru kagemori beats.jpg"
+    alt="Michiru Kagemori (Beastman)"
+    class="character-image"
+>
 
-        <a
-            href="/profile"
-            class="top-button"
-        >
-            Profile
-        </a>
+<div class="character-info">
 
+<h1 class="character-name">
+Michiru Kagemori
+</h1>
 
-        <a
-            href="#"
-            class="top-button"
-        >
-            Logout
-        </a>
+<div class="character-series">
 
-
-    </nav>
-
-
-    <!-- =========================
-         CHARACTER
-         ========================= -->
-
-    <main class="character-area">
-
-
-        <section class="character-panel">
-
-
-            <!-- =====================
-                 MICHIRU BEASTMAN IMAGE
-                 ===================== -->
-
-            <img
-                src="https://media.discordapp.net/attachments/1534687942927188142/1538179870985560175/6ad783c862c0cda6cdca8c84e95fc273.jpg?ex=6a81bd23&is=6a806ba3&hm=162c635cd8b45b7c334057c6db6d9584dd3d26cc8426b1ade8cf593fbb770860&=&format=webp&width=348&height=512"
-                alt="Michiru Kagemori Beastman Form"
-                class="character-image"
-            >
-
-
-            <!-- =====================
-                 CHARACTER INFORMATION
-                 ===================== -->
-
-            <div class="character-info">
-
-
-                <!-- NAME -->
-
-                <h1 class="character-name">
-
-                    Michiru Kagemori (Beastman)
-
-                </h1>
-
-
-                <!-- SERIES -->
-
-                <div class="character-series">
-
-                    BNA: Brand New Animal
-
-                </div>
-
-
-                <!-- AGE -->
-
-                <div class="character-detail">
-
-                    Age:
-
-                    <span class="age">
-                        18
-                    </span>
-
-                </div>
-
-
-                <!-- RACE -->
-
-                <div class="character-detail">
-
-                    Race:
-                    Tanuki
-
-                </div>
-
-
-                <!-- BACK BUTTON -->
-
-                <a
-                    href="../series/bna-brand-new-animal.html"
-                    class="back-button"
-                >
-
-                    𐂯 Back to BNA
-
-                </a>
-
-
-            </div>
-
-
-        </section>
-
-
-    </main>
-
+<a
+    href="../series/bna-brand-new-animal.html"
+    class="series-link"
+>
+BNA: Brand New Animal
+</a>
 
 </div>
 
+<div class="character-detail">
+
+Age:
+<span class="age">
+18+
+</span>
+
+</div>
+
+<div class="character-detail">
+
+Race:
+Beastman
+
+</div>
+
+<a
+    href="../characters.html"
+    class="back-button"
+>
+𐂯 Back to Characters
+</a>
+
+</div>
+
+</section>
+
+</main>
+
+</div>
 
 </body>
 
