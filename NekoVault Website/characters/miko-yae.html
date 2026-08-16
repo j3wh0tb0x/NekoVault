@@ -3,676 +3,401 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
-    <title>Miko Yae - NekoVault</title>
+<title>Miko Yae - NekoVault</title>
 
+<style>
 
-    <style>
+@font-face {
+    font-family: "Soul Billani";
+    src: url("../SoulBillani.otf") format("opentype");
+}
 
-        @font-face {
+@font-face {
+    font-family: "Prili Display";
+    src: url("../PriliDisplay.otf") format("opentype");
+}
 
-            font-family: "Soul Billani";
+* {
+    box-sizing: border-box;
+}
 
-            src: url("../SoulBillani.otf")
-                format("opentype");
+body {
 
-        }
+    margin: 0;
 
+    min-height: 100vh;
 
-        @font-face {
+    background-image:
+        url("../images/background/background.jpg");
 
-            font-family: "Prili Display";
+    background-size: cover;
 
-            src: url("../PriliDisplay.otf")
-                format("opentype");
+    background-position: center;
 
-        }
+    background-attachment: fixed;
 
+    background-repeat: no-repeat;
 
-        * {
+    background-color: #1e5da5;
 
-            box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
 
-        }
+.page {
 
+    width: 100%;
 
-        html {
+    min-height: 100vh;
 
-            min-height: 100%;
+    display: flex;
 
-        }
+    flex-direction: column;
 
+    align-items: center;
 
-        body {
+    padding: 30px 20px 50px;
+}
 
-            margin: 0;
+.top-panel {
 
-            min-height: 100vh;
+    width: min(1000px, 100%);
 
-            background-image:
-                url("https://media.discordapp.net/attachments/1534687942927188142/1537979191574663218/download_1.jpg?ex=6a81023d&is=6a7fb0bd&hm=1673f225a38956cf717fa48e5b403c6d5ee121bf046d6908209402e086beb847&=&format=webp&width=1024&height=576");
+    background: #000000;
 
-            background-size: cover;
+    display: flex;
 
-            background-position: center;
+    justify-content: center;
 
-            background-attachment: fixed;
+    align-items: center;
 
-            background-repeat: no-repeat;
+    gap: 10px;
 
-            background-color: #1e5da5;
+    padding: 15px 20px;
 
-            font-family: Arial, sans-serif;
+    border-radius: 25px;
+}
 
-        }
+.top-button {
 
+    font-family:
+        "Prili Display",
+        serif;
 
-        .page {
+    color: #FAEB92;
 
-            width: 100%;
+    text-decoration: none;
 
-            min-height: 100vh;
+    font-size: 35px;
 
-            display: flex;
+    padding: 8px 18px;
 
-            flex-direction: column;
+    text-shadow:
+        0 0 5px #F582A7,
+        0 0 10px #F582A7;
+}
 
-            align-items: center;
+.top-button:hover {
+    color: #F582A7;
+}
 
-            padding:
-                30px 20px 50px;
+.character-area {
 
-        }
+    width: min(1100px, 100%);
 
+    margin-top: 50px;
+}
 
-        /* =========================
-           NAVIGATION
-           ========================= */
+.character-panel {
 
-        .top-panel {
+    background: #000000;
 
-            width: min(1000px, 100%);
+    border-radius: 25px;
 
-            background: #000000;
+    padding: 30px;
 
-            display: flex;
+    display: flex;
 
-            justify-content: center;
+    gap: 40px;
 
-            align-items: center;
+    box-shadow:
+        0 5px 25px rgba(0,0,0,0.7);
+}
 
-            gap: 10px;
+.character-image {
 
-            padding:
-                15px 20px;
+    width: 45%;
 
-            border-radius: 25px;
+    max-height: 700px;
 
-            box-shadow:
-                0 5px 20px
-                rgba(0, 0, 0, 0.5);
+    object-fit: contain;
 
-        }
+    border-radius: 18px;
+}
 
+.character-info {
 
-        .top-button {
+    flex: 1;
 
-            font-family:
-                "Prili Display",
-                serif;
+    padding: 20px 10px;
+}
 
-            color: #FAEB92;
+.character-name {
 
-            text-decoration: none;
+    margin: 0;
 
-            font-size: 35px;
+    font-family:
+        "Soul Billani",
+        cursive;
 
-            padding:
-                8px 18px;
+    font-size: 65px;
 
-            border-radius: 15px;
+    color: #FAEB92;
 
-            text-shadow:
-                0 0 5px #F582A7,
-                0 0 10px #F582A7;
+    text-shadow:
+        0 0 8px #F582A7,
+        0 0 16px #F582A7,
+        3px 3px 0 #F582A7;
+}
 
-            transition:
-                transform 0.2s ease,
-                color 0.2s ease;
+.character-series {
 
-        }
+    margin-top: 15px;
 
+    margin-bottom: 45px;
 
-        .top-button:hover {
+    font-family:
+        "Prili Display",
+        serif;
 
-            color: #F582A7;
+    font-size: 40px;
+}
 
-            transform:
-                translateY(-3px);
+.series-link {
 
-        }
+    color: #FAEB92;
 
+    text-decoration: none;
 
-        /* =========================
-           CHARACTER AREA
-           ========================= */
+    text-shadow:
+        0 0 5px #F582A7,
+        0 0 10px #F582A7;
+}
 
-        .character-area {
+.series-link:hover {
+    color: #F582A7;
+}
 
-            width: min(1100px, 100%);
+.character-detail {
 
-            margin-top: 50px;
+    margin: 22px 0;
 
-        }
+    font-family:
+        "Prili Display",
+        serif;
 
+    font-size: 37px;
 
-        /* =========================
-           CHARACTER PANEL
-           ========================= */
+    color: #FAEB92;
+}
 
-        .character-panel {
+.age {
+    color: #FF0000;
+}
 
-            width: 100%;
+.back-button {
 
-            background: #000000;
+    display: inline-block;
 
-            border-radius: 25px;
+    margin-top: 35px;
 
-            padding: 30px;
+    padding: 8px 18px;
 
-            display: flex;
+    background: #FAEB92;
 
-            gap: 40px;
+    color: #7b5e94;
 
-            box-shadow:
-                0 5px 25px
-                rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
 
-        }
+    font-family:
+        "Prili Display",
+        serif;
 
+    font-size: 20px;
 
-        /* =========================
-           IMAGE
-           ========================= */
+    text-decoration: none;
+}
 
-        .character-image {
+.back-button:hover {
+    background: #F582A7;
+}
 
-            width: 45%;
 
-            max-height: 700px;
+@media (max-width: 700px) {
 
-            object-fit: contain;
+    .page {
+        padding: 15px 10px 35px;
+    }
 
-            display: block;
+    .top-panel {
+        flex-wrap: wrap;
+        gap: 3px;
+        padding: 8px 6px;
+    }
 
-            border-radius: 18px;
+    .top-button {
+        font-size: 21px;
+        padding: 6px 9px;
+    }
 
-        }
+    .character-area {
+        margin-top: 25px;
+    }
 
+    .character-panel {
+        flex-direction: column;
+        padding: 15px;
+        gap: 18px;
+    }
 
-        /* =========================
-           INFORMATION
-           ========================= */
+    .character-image {
+        width: 100%;
+        max-height: 500px;
+    }
 
-        .character-info {
+    .character-info {
+        width: 100%;
+        padding: 5px 3px;
+    }
 
-            flex: 1;
+    .character-name {
+        font-size: 42px;
+    }
 
-            padding:
-                20px 10px;
+    .character-series {
+        font-size: 25px;
+        margin-bottom: 25px;
+    }
 
-        }
+    .character-detail {
+        font-size: 24px;
+    }
+}
 
+@media (max-width: 400px) {
 
-        .character-name {
+    .top-button {
+        font-size: 18px;
+    }
 
-            margin: 0;
+    .character-name {
+        font-size: 35px;
+    }
 
-            font-family:
-                "Soul Billani",
-                cursive;
+    .character-series {
+        font-size: 21px;
+    }
 
-            font-size: 65px;
+    .character-detail {
+        font-size: 20px;
+    }
+}
 
-            line-height: 1.05;
-
-            color: #FAEB92;
-
-            text-shadow:
-                0 0 8px #F582A7,
-                0 0 16px #F582A7,
-                3px 3px 0 #F582A7;
-
-        }
-
-
-        /* =========================
-           SERIES
-           ========================= */
-
-        .character-series {
-
-            margin-top: 15px;
-
-            margin-bottom: 45px;
-
-            font-family:
-                "Prili Display",
-                serif;
-
-            font-size: 40px;
-
-            color: #FAEB92;
-
-            text-shadow:
-                0 0 5px #F582A7,
-                0 0 10px #F582A7;
-
-        }
-
-
-        /* =========================
-           DETAILS
-           ========================= */
-
-        .character-detail {
-
-            margin:
-                22px 0;
-
-            font-family:
-                "Prili Display",
-                serif;
-
-            font-size: 37px;
-
-            color: #FAEB92;
-
-            text-shadow:
-                0 0 5px #F582A7,
-                0 0 10px #F582A7;
-
-        }
-
-
-        /* =========================
-           AGE
-           ========================= */
-
-        .age {
-
-            color: #FF0000;
-
-            text-shadow: none;
-
-        }
-
-
-        /* =========================
-           BACK BUTTON
-           ========================= */
-
-        .back-button {
-
-            display: inline-block;
-
-            margin-top: 35px;
-
-            padding:
-                8px 18px;
-
-            background: #FAEB92;
-
-            color: #7b5e94;
-
-            border-radius: 10px;
-
-            font-family:
-                "Prili Display",
-                serif;
-
-            font-size: 20px;
-
-            text-decoration: none;
-
-            box-shadow:
-                0 0 6px #F582A7;
-
-            transition:
-                transform 0.2s ease,
-                background 0.2s ease;
-
-        }
-
-
-        .back-button:hover {
-
-            background: #F582A7;
-
-            transform:
-                translateY(-2px);
-
-        }
-
-
-        /* =========================
-           MOBILE
-           ========================= */
-
-        @media (max-width: 700px) {
-
-            .page {
-
-                padding:
-                    20px 12px 40px;
-
-            }
-
-
-            .top-panel {
-
-                width: 100%;
-
-                flex-wrap: wrap;
-
-                gap: 5px;
-
-                padding:
-                    10px 8px;
-
-                border-radius: 20px;
-
-            }
-
-
-            .top-button {
-
-                font-size: 23px;
-
-                padding:
-                    7px 10px;
-
-                border-radius: 12px;
-
-            }
-
-
-            .character-area {
-
-                width: 100%;
-
-                margin-top: 30px;
-
-            }
-
-
-            .character-panel {
-
-                flex-direction: column;
-
-                padding: 18px;
-
-                gap: 20px;
-
-                border-radius: 20px;
-
-            }
-
-
-            .character-image {
-
-                width: 100%;
-
-                max-height: 600px;
-
-                border-radius: 14px;
-
-            }
-
-
-            .character-info {
-
-                padding:
-                    10px 5px;
-
-            }
-
-
-            .character-name {
-
-                font-size: 48px;
-
-            }
-
-
-            .character-series {
-
-                font-size: 25px;
-
-                margin-bottom: 30px;
-
-            }
-
-
-            .character-detail {
-
-                font-size: 24px;
-
-                margin:
-                    18px 0;
-
-            }
-
-
-            .back-button {
-
-                font-size: 18px;
-
-            }
-
-        }
-
-
-        /* =========================
-           SMALL PHONES
-           ========================= */
-
-        @media (max-width: 400px) {
-
-            .top-button {
-
-                font-size: 19px;
-
-                padding:
-                    6px 8px;
-
-            }
-
-
-            .character-panel {
-
-                padding: 12px;
-
-            }
-
-
-            .character-name {
-
-                font-size: 40px;
-
-            }
-
-
-            .character-series {
-
-                font-size: 22px;
-
-            }
-
-
-            .character-detail {
-
-                font-size: 21px;
-
-            }
-
-        }
-
-    </style>
+</style>
 
 </head>
 
-
 <body>
-
 
 <div class="page">
 
+<nav class="top-panel">
 
-    <!-- =========================
-         NAVIGATION
-         ========================= -->
+<a href="/" class="top-button">
+Home
+</a>
 
-    <nav class="top-panel">
+<a href="/gallery" class="top-button">
+Gallery
+</a>
 
+<a href="/characters" class="top-button">
+Characters
+</a>
 
-        <a
-            href="/"
-            class="top-button"
-        >
-            Home
-        </a>
+<a href="/series-index.html" class="top-button">
+Series
+</a>
 
+<a href="/profile" class="top-button">
+Profile
+</a>
 
-        <a
-            href="/gallery"
-            class="top-button"
-        >
-            Gallery
-        </a>
+</nav>
 
+<main class="character-area">
 
-        <a
-            href="/characters"
-            class="top-button"
-        >
-            Characters
-        </a>
+<section class="character-panel">
 
+<img
+    src="miko yae.png"
+    alt="Miko Yae"
+    class="character-image"
+>
 
-        <a
-            href="/profile"
-            class="top-button"
-        >
-            Profile
-        </a>
+<div class="character-info">
 
+<h1 class="character-name">
+Miko Yae
+</h1>
 
-        <a
-            href="#"
-            class="top-button"
-        >
-            Logout
-        </a>
+<div class="character-series">
 
-
-    </nav>
-
-
-    <!-- =========================
-         CHARACTER
-         ========================= -->
-
-    <main class="character-area">
-
-
-        <section class="character-panel">
-
-
-            <!-- CHARACTER IMAGE -->
-
-            <img
-                src="https://media.discordapp.net/attachments/1534687942927188142/1538173729702420580/7aa5ff1823bb93864f16d8a840e3d673_4602919322111705296.png?ex=6a81b76b&is=6a8065eb&hm=567c421c2eecf79c4f849e7a9196af96ad40db691625307e1b8bcb512c7988b4&=&format=webp&quality=lossless&width=466&height=768"
-                alt="Miko Yae"
-                class="character-image"
-            >
-
-
-            <!-- CHARACTER INFORMATION -->
-
-            <div class="character-info">
-
-
-                <!-- NAME -->
-
-                <h1 class="character-name">
-
-                    Miko Yae
-
-                </h1>
-
-
-                <!-- SERIES -->
-
-                <div class="character-series">
-
-                    Genshin Impact
-
-                </div>
-
-
-                <!-- AGE -->
-
-                <div class="character-detail">
-
-                    Age:
-
-                    <span class="age">
-                        18+
-                    </span>
-
-                </div>
-
-
-                <!-- RACE -->
-
-                <div class="character-detail">
-
-                    Race:
-                    Kitsune
-
-                </div>
-
-
-                <!-- BACK -->
-
-                <a
-                    href="../series/genshin-impact.html"
-                    class="back-button"
-                >
-
-                    𐂯 Back to Genshin Impact
-
-                </a>
-
-
-            </div>
-
-
-        </section>
-
-
-    </main>
-
+<a
+    href="../series/genshin-impact.html"
+    class="series-link"
+>
+Genshin Impact
+</a>
 
 </div>
 
+<div class="character-detail">
+
+Age:
+<span class="age">
+18+
+</span>
+
+</div>
+
+<div class="character-detail">
+
+Race:
+Kitsune
+
+</div>
+
+<a
+    href="../characters.html"
+    class="back-button"
+>
+𐂯 Back to Characters
+</a>
+
+</div>
+
+</section>
+
+</main>
+
+</div>
 
 </body>
 
