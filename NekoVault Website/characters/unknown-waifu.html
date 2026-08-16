@@ -142,6 +142,10 @@
         }
 
 
+        /* =========================
+           NAVIGATION BUTTONS
+           ========================= */
+
         .top-button {
 
             font-family:
@@ -252,12 +256,6 @@
             padding:
                 20px 10px;
 
-            display: flex;
-
-            flex-direction: column;
-
-            align-items: flex-start;
-
         }
 
 
@@ -284,16 +282,16 @@
                 0 0 16px #F582A7,
                 3px 3px 0 #F582A7;
 
-            word-break: normal;
-
         }
 
 
         /* =========================
-           SERIES
+           SERIES BUTTON
            ========================= */
 
         .character-series {
+
+            display: inline-block;
 
             margin-top: 15px;
 
@@ -307,39 +305,25 @@
 
             color: #FAEB92;
 
+            text-decoration: none;
+
             text-shadow:
                 0 0 5px #F582A7,
                 0 0 10px #F582A7;
 
-            line-height: 1.2;
-
-        }
-
-
-        /* =========================
-           SERIES LINK
-           ========================= */
-
-        .character-series a {
-
-            color: #FAEB92;
-
-            text-decoration: none;
-
             transition:
                 color 0.2s ease,
-                text-shadow 0.2s ease;
+                transform 0.2s ease;
 
         }
 
 
-        .character-series a:hover {
+        .character-series:hover {
 
             color: #F582A7;
 
-            text-shadow:
-                0 0 5px #FAEB92,
-                0 0 12px #FAEB92;
+            transform:
+                translateY(-2px);
 
         }
 
@@ -365,8 +349,6 @@
                 0 0 5px #F582A7,
                 0 0 10px #F582A7;
 
-            line-height: 1.2;
-
         }
 
 
@@ -377,8 +359,6 @@
         .age {
 
             color: #FF0000;
-
-            text-shadow: none;
 
         }
 
@@ -431,7 +411,7 @@
 
 
         /* =========================
-           TABLETS
+           TABLET
            ========================= */
 
         @media (max-width: 900px) {
@@ -552,7 +532,7 @@
 
 
             /* =====================
-               IMAGE
+               CHARACTER IMAGE
                ===================== */
 
             .character-image {
@@ -579,8 +559,6 @@
                 padding:
                     5px 3px 10px;
 
-                align-items: flex-start;
-
             }
 
 
@@ -590,13 +568,9 @@
 
             .character-name {
 
-                width: 100%;
-
                 font-size: 42px;
 
                 line-height: 1.05;
-
-                overflow-wrap: break-word;
 
             }
 
@@ -607,17 +581,13 @@
 
             .character-series {
 
-                width: 100%;
-
                 margin-top: 10px;
 
                 margin-bottom: 25px;
 
                 font-size: 25px;
 
-                line-height: 1.25;
-
-                overflow-wrap: break-word;
+                line-height: 1.15;
 
             }
 
@@ -628,16 +598,12 @@
 
             .character-detail {
 
-                width: 100%;
-
                 font-size: 24px;
 
                 margin:
                     15px 0;
 
-                line-height: 1.25;
-
-                overflow-wrap: break-word;
+                line-height: 1.2;
 
             }
 
@@ -838,154 +804,153 @@
 <body>
 
 
-<div class="page">
+    <div class="page">
 
 
-    <!-- =========================
-         TOP NAVIGATION
-         ========================= -->
+        <!-- =========================
+             TOP NAVIGATION
+             ========================= -->
 
-    <nav class="top-panel">
-
-
-        <a
-            href="/"
-            class="top-button"
-        >
-            Home
-        </a>
+        <nav class="top-panel">
 
 
-        <a
-            href="/gallery"
-            class="top-button"
-        >
-            Gallery
-        </a>
-
-
-        <a
-            href="/characters"
-            class="top-button"
-        >
-            Characters
-        </a>
-
-
-        <a
-            href="/series-index.html"
-            class="top-button"
-        >
-            Series
-        </a>
-
-
-        <a
-            href="/profile"
-            class="top-button"
-        >
-            Profile
-        </a>
-
-
-    </nav>
-
-
-    <!-- =========================
-         CHARACTER
-         ========================= -->
-
-    <main class="character-area">
-
-
-        <section class="character-panel">
-
-
-            <!-- =====================
-                 CHARACTER IMAGE
-                 ===================== -->
-
-            <img
-                src="unknown waifu.jpg"
-                alt="Unknown Waifu"
-                class="character-image"
+            <a
+                href="/"
+                class="top-button"
             >
+                Home
+            </a>
 
 
-            <!-- =====================
-                 CHARACTER INFORMATION
-                 ===================== -->
-
-            <div class="character-info">
-
-
-                <!-- NAME -->
-
-                <h1 class="character-name">
-
-                    Unknown Waifu
-
-                </h1>
+            <a
+                href="/gallery"
+                class="top-button"
+            >
+                Gallery
+            </a>
 
 
-                <!-- SERIES -->
+            <a
+                href="/characters"
+                class="top-button"
+            >
+                Characters
+            </a>
 
-                <div class="character-series">
 
-                    Series:
+            <a
+                href="/series-index.html"
+                class="top-button"
+            >
+                Series
+            </a>
 
-                    <a href="/series-index.html">
+
+            <a
+                href="/profile"
+                class="top-button"
+            >
+                Profile
+            </a>
+
+
+        </nav>
+
+
+        <!-- =========================
+             CHARACTER
+             ========================= -->
+
+        <main class="character-area">
+
+
+            <section class="character-panel">
+
+
+                <!-- =====================
+                     CHARACTER IMAGE
+                     ===================== -->
+
+                <img
+                    src="unknown%20waifu.jpg"
+                    alt="Unknown Waifu"
+                    class="character-image"
+                >
+
+
+                <!-- =====================
+                     CHARACTER INFORMATION
+                     ===================== -->
+
+                <div class="character-info">
+
+
+                    <!-- NAME -->
+
+                    <h1 class="character-name">
+
+                        Unknown Waifu
+
+                    </h1>
+
+
+                    <!-- SERIES BUTTON -->
+
+                    <a
+                        href="../series-index.html"
+                        class="character-series"
+                    >
 
                         Original or Unclassified
 
                     </a>
 
+
+                    <!-- AGE -->
+
+                    <div class="character-detail">
+
+                        Age:
+
+                        <span class="age">
+                            18+
+                        </span>
+
+                    </div>
+
+
+                    <!-- RACE -->
+
+                    <div class="character-detail">
+
+                        Race:
+                        Any
+
+                    </div>
+
+
+                    <!-- BACK TO CHARACTERS -->
+
+                    <a
+                        href="../characters.html"
+                        class="back-button"
+                    >
+
+                        𐂯 Back to Characters
+
+                    </a>
+
+
                 </div>
 
 
-                <!-- AGE -->
-
-                <div class="character-detail">
-
-                    Age:
-
-                    <span class="age">
-                        18+
-                    </span>
-
-                </div>
+            </section>
 
 
-                <!-- RACE -->
-
-                <div class="character-detail">
-
-                    Race:
-                    Any
-
-                </div>
+        </main>
 
 
-                <!-- BACK -->
-
-                <a
-                    href="/characters"
-                    class="back-button"
-                >
-                    𐂯 Back to Characters
-                </a>
-
-
-            </div>
-
-
-        </section>
-
-
-    </main>
-
-
-</div>
+    </div>
 
 
 </body>
