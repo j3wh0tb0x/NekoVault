@@ -121,7 +121,14 @@
                 "Soul Billani",
                 cursive;
 
-            font-size: 150px;
+            /*
+             * Responsive size.
+             * This automatically gets smaller
+             * on smaller screens.
+             */
+
+            font-size:
+                clamp(50px, 12vw, 150px);
 
             line-height: 1;
 
@@ -130,9 +137,11 @@
 
             text-align: center;
 
-            letter-spacing: 2px;
+            letter-spacing: 0;
 
             white-space: nowrap;
+
+            width: 100%;
 
             text-shadow:
                 0 0 8px #F582A7,
@@ -658,18 +667,24 @@
             .page {
 
                 padding:
-                    25px 12px 40px;
+                    20px 10px 40px;
 
             }
 
 
             /* =====================
-               MOBILE TITLE
+               MOBILE LOGO
                ===================== */
 
             .logo {
 
-                font-size: 50px;
+                /*
+                 * Smaller responsive size
+                 * so ALL of NekoVault fits.
+                 */
+
+                font-size:
+                    clamp(32px, 11vw, 50px);
 
                 letter-spacing: 0;
 
@@ -683,6 +698,13 @@
 
                 margin:
                     0 0 20px;
+
+                /*
+                 * Prevents the logo from
+                 * pushing outside the screen.
+                 */
+
+                overflow: visible;
 
             }
 
@@ -737,10 +759,6 @@
 
             }
 
-
-            /* =====================
-               MOBILE MAIN IMAGE
-               ===================== */
 
             .main-image {
 
@@ -960,7 +978,13 @@
 
             .logo {
 
-                font-size: 43px;
+                /*
+                 * Automatically scales down
+                 * for smaller phones.
+                 */
+
+                font-size:
+                    clamp(28px, 11vw, 42px);
 
                 letter-spacing: 0;
 
@@ -979,16 +1003,12 @@
             }
 
 
-            /* IMAGE */
-
             .main-image {
 
                 height: 190px;
 
             }
 
-
-            /* BUTTONS */
 
             .side-button {
 
@@ -1002,8 +1022,6 @@
             }
 
 
-            /* DESCRIPTION */
-
             .description-box {
 
                 font-size: 18px;
@@ -1015,8 +1033,6 @@
 
             }
 
-
-            /* STATISTICS */
 
             .stat-box {
 
@@ -1040,8 +1056,6 @@
 
             }
 
-
-            /* GALLERY INFORMATION */
 
             .gallery-info {
 
@@ -1072,8 +1086,6 @@
 
             }
 
-
-            /* GALLERY IMAGE + BUTTONS */
 
             .gallery-action-section {
 
@@ -1120,7 +1132,7 @@
 
             .logo {
 
-                font-size: 37px;
+                font-size: 29px;
 
                 letter-spacing: 0;
 
@@ -1204,7 +1216,6 @@
 
         }
 
-
     </style>
 
 </head>
@@ -1266,8 +1277,6 @@
         <div class="image-section">
 
 
-            <!-- PLAY BUTTON -->
-
             <a
                 href="#"
                 class="side-button"
@@ -1278,7 +1287,7 @@
             </a>
 
 
-            <!-- BLAIR IMAGE -->
+            <!-- BLAIR -->
 
             <img
                 src="images/characters/blair.png"
@@ -1286,8 +1295,6 @@
                 class="main-image"
             >
 
-
-            <!-- DISCORD BUTTON -->
 
             <a
                 href="#"
@@ -1321,8 +1328,6 @@
         <div class="stats-section">
 
 
-            <!-- PLAYERS -->
-
             <div class="stat-box stat-black">
 
                 <div
@@ -1343,8 +1348,6 @@
             </div>
 
 
-            <!-- PURR-FECT CARDS -->
-
             <div class="stat-box stat-pink">
 
                 <div
@@ -1364,8 +1367,6 @@
 
             </div>
 
-
-            <!-- DISCORD SERVERS -->
 
             <div class="stat-box stat-black">
 
@@ -1397,8 +1398,6 @@
         <section class="gallery-info">
 
 
-            <!-- GALLERY TITLE -->
-
             <h2 class="gallery-title">
 
                 <span>── ⋆⋅</span>
@@ -1407,8 +1406,6 @@
 
             </h2>
 
-
-            <!-- GALLERY INFORMATION BOX -->
 
             <div class="gallery-info-box">
 
@@ -1421,14 +1418,8 @@
             </div>
 
 
-            <!-- =========================
-                 GALLERY IMAGE + BUTTONS
-                 ========================= -->
-
             <div class="gallery-action-section">
 
-
-                <!-- GALLERY IMAGE -->
 
                 <img
                     src="images/gallery/gallery.png"
@@ -1436,8 +1427,6 @@
                     class="gallery-image"
                 >
 
-
-                <!-- GALLERY BUTTONS -->
 
                 <div class="gallery-action-buttons">
 
