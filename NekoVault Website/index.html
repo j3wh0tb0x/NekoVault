@@ -71,8 +71,6 @@
 
             min-height: 100vh;
 
-            /* PERMANENT GITHUB IMAGE */
-
             background-image:
                 url("images/background/background.jpg");
 
@@ -83,6 +81,8 @@
             background-attachment: fixed;
 
             background-repeat: no-repeat;
+
+            background-color: #1e5da5;
 
             font-family: Arial, sans-serif;
 
@@ -131,6 +131,8 @@
             text-align: center;
 
             letter-spacing: 2px;
+
+            white-space: nowrap;
 
             text-shadow:
                 0 0 8px #F582A7,
@@ -661,20 +663,33 @@
             }
 
 
-            /* TITLE */
+            /* =====================
+               MOBILE TITLE
+               ===================== */
 
             .logo {
 
-                font-size: 58px;
+                font-size: 50px;
 
-                letter-spacing: 1px;
+                letter-spacing: 0;
 
-                margin-bottom: 20px;
+                line-height: 1;
+
+                width: 100%;
+
+                white-space: nowrap;
+
+                text-align: center;
+
+                margin:
+                    0 0 20px;
 
             }
 
 
-            /* NAVIGATION */
+            /* =====================
+               MOBILE NAVIGATION
+               ===================== */
 
             .navigation {
 
@@ -704,7 +719,9 @@
             }
 
 
-            /* IMAGE SECTION */
+            /* =====================
+               MOBILE IMAGE SECTION
+               ===================== */
 
             .image-section {
 
@@ -721,7 +738,9 @@
             }
 
 
-            /* IMAGE */
+            /* =====================
+               MOBILE MAIN IMAGE
+               ===================== */
 
             .main-image {
 
@@ -734,7 +753,9 @@
             }
 
 
-            /* BUTTONS */
+            /* =====================
+               MOBILE BUTTONS
+               ===================== */
 
             .side-button {
 
@@ -757,7 +778,9 @@
             }
 
 
-            /* DESCRIPTION */
+            /* =====================
+               MOBILE DESCRIPTION
+               ===================== */
 
             .description-box {
 
@@ -781,7 +804,9 @@
             }
 
 
-            /* STATISTICS */
+            /* =====================
+               MOBILE STATISTICS
+               ===================== */
 
             .stats-section {
 
@@ -819,7 +844,9 @@
             }
 
 
-            /* GALLERY INFORMATION */
+            /* =====================
+               MOBILE GALLERY
+               ===================== */
 
             .gallery-info {
 
@@ -859,7 +886,9 @@
             }
 
 
-            /* GALLERY IMAGE + BUTTONS */
+            /* =====================
+               MOBILE GALLERY IMAGE
+               ===================== */
 
             .gallery-action-section {
 
@@ -931,7 +960,11 @@
 
             .logo {
 
-                font-size: 48px;
+                font-size: 43px;
+
+                letter-spacing: 0;
+
+                white-space: nowrap;
 
             }
 
@@ -1085,6 +1118,19 @@
 
         @media (max-width: 320px) {
 
+            .logo {
+
+                font-size: 37px;
+
+                letter-spacing: 0;
+
+                white-space: nowrap;
+
+                width: 100%;
+
+            }
+
+
             .side-button {
 
                 width: 100%;
@@ -1157,6 +1203,7 @@
             }
 
         }
+
 
     </style>
 
@@ -1234,7 +1281,7 @@
             <!-- BLAIR IMAGE -->
 
             <img
-                src="https://media.discordapp.net/attachments/1534687942927188142/1537986685818634290/F9w-LEDWIAAcmXr_1.png?ex=6a810938&is=6a7fb7b8&hm=758f89aa85ba907412b4846f3a82480792e02df1566f0c86cdb3970b0cb9fe26&=&format=webp&quality=lossless&width=768&height=399"
+                src="images/characters/blair.png"
                 alt="NekoVault"
                 class="main-image"
             >
@@ -1384,7 +1431,7 @@
                 <!-- GALLERY IMAGE -->
 
                 <img
-                    src="https://cdn.discordapp.com/attachments/1534687942927188142/1538002921805848686/d5d8uud-29f41a77-008d-4283-b854-7be470c54367-removebg-preview.png?ex=6a811857&is=6a7fc6d7&hm=05577110ed0b617b7d97f5ab57cba5b9d7405ec5d00ebc7c09e20eeba5958736&"
+                    src="images/gallery/gallery.png"
                     alt="Gallery"
                     class="gallery-image"
                 >
